@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Renuka Devi | Business Analyst</title>
+<meta name="description" content="Renuka Devi, Business Analyst. Requirements analysis, process improvement, Agile delivery, UAT and data-driven reporting.">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   1. DESIGN TOKENS
+   ========================================================= */
+@property --n { syntax: '<integer>'; inherits: false; initial-value: 0; }
+
+:root{
+  --bg:#080A0F; --bg-2:#0D111A; --card:#111722;
+  --text:#F5F7FA; --muted:#A0A9B8; --dim:#6F7a8c;
+  --blue:#4787FF; --blue-deep:#2B62E3; --blue-ink:#1C47C4;
+  --cyan:#00E5FF; --violet:#9B72FF; --purple:#A855F7; --emerald:#00D6A0;
+  --line:rgba(160,169,184,.14); --line-2:rgba(160,190,255,.24);
+  --glass:rgba(17,23,34,.62); --glass-2:rgba(13,17,26,.78);
+
+  --font-display:'Sora', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-body:'Manrope', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  --s-1:.5rem; --s-2:.75rem; --s-3:1rem; --s-4:1.5rem; --s-5:2rem; --s-6:3rem; --s-7:4.5rem;
+  --r-sm:10px; --r-md:14px; --r-lg:22px; --r-xl:30px;
+
+  --shadow-card:0 24px 60px -24px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.05);
+  --glow-blue:0 0 0 1px rgba(71,135,255,.45), 0 18px 50px -12px rgba(71,135,255,.45);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --t-fast:.25s; --t-med:.45s; --t-slow:.8s;
+
+  --cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='40%25' r='60%25'%3E%3Cstop offset='0' stop-color='%23ffffff' stop-opacity='.35'/%3E%3Cstop offset='1' stop-color='%234787FF' stop-opacity='.06'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='13' fill='url(%23g)' stroke='%2300E5FF' stroke-opacity='.75' stroke-width='1.3'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%234787FF' stroke-opacity='.45'/%3E%3Ccircle cx='16' cy='16' r='5.5' fill='%2300E5FF' fill-opacity='.28'/%3E%3Ccircle cx='16' cy='16' r='2.6' fill='%23EAFDFF'/%3E%3C/svg%3E") 16 16, auto;
+  --cursor-hot:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='17' fill='%2300E5FF' fill-opacity='.12' stroke='%2300E5FF' stroke-width='1.6'/%3E%3Ccircle cx='20' cy='20' r='11' fill='none' stroke='%239B72FF' stroke-opacity='.6' stroke-dasharray='3 3'/%3E%3Ccircle cx='20' cy='20' r='4' fill='%23ffffff'/%3E%3C/svg%3E") 20 20, pointer;
+}
+
+/* =========================================================
+   2. BASE
+   ========================================================= */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:100px; -webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:var(--font-body); font-size:1.0625rem; line-height:1.65;
+  cursor:var(--cursor); overflow-x:hidden;
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a,button,summary,label[for]{cursor:var(--cursor-hot)}
+img,svg{max-width:100%}
+h1,h2,h3,h4{font-family:var(--font-display); line-height:1.15; margin:0; letter-spacing:-.02em; font-weight:700}
+p{margin:0}
+ul,ol{margin:0; padding:0; list-style:none}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--cyan); outline-offset:3px; border-radius:8px}
+::selection{background:rgba(71,135,255,.4); color:#fff}
+.sr-only{position:absolute!important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+.skip{position:absolute; left:1rem; top:-4rem; z-index:100; padding:.7rem 1rem; background:var(--blue-deep); color:#fff; border-radius:10px; text-decoration:none; font-weight:700}
+.skip:focus{top:1rem}
+
+.container{width:min(1200px, 100% - 2.5rem); margin-inline:auto}
+.section{position:relative; padding-block:clamp(5rem, 10vw, 8.5rem)}
+.section--tint{background:linear-gradient(180deg, transparent, rgba(13,17,26,.7) 18%, rgba(13,17,26,.7) 82%, transparent)}
+
+.section-head{max-width:760px; margin-bottom:clamp(2.5rem,5vw,4rem)}
+.section-head h2{font-size:clamp(2rem, 4.4vw, 3.3rem); font-weight:700}
+.section-head p{margin-top:var(--s-3); color:var(--muted); font-size:1.125rem; max-width:62ch}
+.section-head .kicker{display:inline-flex; align-items:center; gap:.6rem; color:var(--cyan); font-weight:600; font-size:.95rem; margin-bottom:var(--s-3)}
+.section-head .kicker::before{content:""; width:28px; height:1px; background:linear-gradient(90deg,var(--cyan),transparent)}
+
+/* =========================================================
+   3. 3D ANIMATED BACKGROUND (fixed, behind everything)
+   ========================================================= */
+.scene{position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none; perspective:1200px; background:
+  radial-gradient(120% 80% at 50% -10%, #0E1526 0%, var(--bg) 60%)}
+/* Layer 1: ambient light */
+.light{position:absolute; border-radius:50%; will-change:transform}
+.light--a{width:60vmax; height:60vmax; left:-18vmax; top:-22vmax; background:radial-gradient(circle, rgba(71,135,255,.30), transparent 62%); animation:drift-a 32s ease-in-out infinite alternate}
+.light--b{width:52vmax; height:52vmax; right:-20vmax; top:18vh; background:radial-gradient(circle, rgba(155,114,255,.20), transparent 62%); animation:drift-b 38s ease-in-out infinite alternate}
+.light--c{width:46vmax; height:46vmax; left:22vw; bottom:-26vmax; background:radial-gradient(circle, rgba(0,229,255,.14), transparent 62%); animation:drift-c 44s ease-in-out infinite alternate}
+@keyframes drift-a{to{transform:translate3d(14vw,10vh,0) scale(1.15)}}
+@keyframes drift-b{to{transform:translate3d(-12vw,-8vh,0) scale(.9)}}
+@keyframes drift-c{to{transform:translate3d(-10vw,-12vh,0) scale(1.2)}}
+
+/* Layer 2: particles at different depths */
+.particle{position:absolute; left:var(--x); top:var(--y); width:var(--s); height:var(--s); border-radius:50%;
+  background:radial-gradient(circle, rgba(220,250,255,.95) 0 18%, rgba(0,229,255,.55) 40%, rgba(71,135,255,0) 72%);
+  opacity:var(--o); transform:translateZ(var(--z));
+  animation:float var(--d) ease-in-out var(--dl, 0s) infinite alternate}
+@keyframes float{from{translate:0 0} to{translate:var(--mx, 30px) -90px}}
+
+/* Layer 3: geometry */
+.cube{--size:140px; position:absolute; width:var(--size); height:var(--size); transform-style:preserve-3d; animation:spin 46s linear infinite}
+.cube i{position:absolute; inset:0; border:1px solid rgba(0,229,255,.2); background:rgba(71,135,255,.018); box-shadow:inset 0 0 24px rgba(0,229,255,.06)}
+.cube i:nth-child(1){transform:translateZ(calc(var(--size)/2))}
+.cube i:nth-child(2){transform:rotateY(180deg) translateZ(calc(var(--size)/2))}
+.cube i:nth-child(3){transform:rotateY(90deg) translateZ(calc(var(--size)/2))}
+.cube i:nth-child(4){transform:rotateY(-90deg) translateZ(calc(var(--size)/2))}
+.cube i:nth-child(5){transform:rotateX(90deg) translateZ(calc(var(--size)/2))}
+.cube i:nth-child(6){transform:rotateX(-90deg) translateZ(calc(var(--size)/2))}
+.cube--1{left:6vw; top:62vh}
+.cube--2{--size:70px; right:9vw; top:12vh; animation-duration:34s; animation-direction:reverse; opacity:.7}
+@keyframes spin{from{transform:rotateX(0) rotateY(0) rotateZ(0)} to{transform:rotateX(360deg) rotateY(720deg) rotateZ(180deg)}}
+.halo{position:absolute; width:420px; height:420px; right:-120px; bottom:8vh; border-radius:50%; border:1px solid rgba(155,114,255,.18); transform:rotateX(74deg); animation:halo 60s linear infinite}
+.halo::after{content:""; position:absolute; inset:40px; border-radius:50%; border:1px dashed rgba(0,229,255,.16)}
+@keyframes halo{to{transform:rotateX(74deg) rotateZ(360deg)}}
+
+/* =========================================================
+   4. BUTTONS: 3D hover system (every clickable button)
+   ========================================================= */
+.btn{
+  --lift:-4px; --tilt:12deg;
+  position:relative; isolation:isolate; display:inline-flex; align-items:center; justify-content:center; gap:.6rem;
+  min-height:48px; padding:.8rem 1.35rem; border-radius:var(--r-md); border:1px solid transparent;
+  font:600 .98rem/1.2 var(--font-body); letter-spacing:.005em; text-decoration:none; white-space:nowrap;
+  color:var(--text); background:none;
+  transform:perspective(700px) translateY(0) rotateX(0) scale(1);
+  transition:transform var(--t-med) var(--ease), box-shadow var(--t-med) var(--ease), border-color var(--t-fast), background-color var(--t-fast), color var(--t-fast);
+}
+.btn::before{ /* reflection sweep */
+  content:""; position:absolute; inset:0; z-index:-1; border-radius:inherit; pointer-events:none;
+  background:linear-gradient(115deg, transparent 35%, rgba(255,255,255,.22) 50%, transparent 65%) no-repeat;
+  background-size:250% 100%; background-position:130% 0; transition:background-position .7s var(--ease);
+}
+.btn::after{ /* top edge highlight */
+  content:""; position:absolute; left:12%; right:12%; top:0; height:1px; pointer-events:none;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent); opacity:.5; transition:opacity var(--t-fast);
+}
+.btn:hover::before,.btn:focus-visible::before{background-position:-30% 0}
+.btn:hover::after{opacity:1}
+.btn:active{transform:perspective(700px) translateY(1px) rotateX(0) scale(.99); transition-duration:.08s}
+.btn:focus-visible{outline:2px solid var(--cyan); outline-offset:4px}
+.btn .ico{width:18px; height:18px; flex:none}
+
+.btn--primary{
+  background:linear-gradient(135deg, var(--blue-deep), var(--blue-ink)); color:#fff; border-color:rgba(120,165,255,.45);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.22), 0 4px 0 #15358F, 0 12px 26px -8px rgba(71,135,255,.45);
+}
+.btn--primary:hover,.btn--primary:focus-visible{
+  transform:perspective(700px) translateY(var(--lift)) rotateX(var(--tilt)) scale(1.03);
+  border-color:rgba(0,229,255,.7);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.3), 0 8px 0 #122E7C, 0 26px 44px -10px rgba(71,135,255,.7), 0 0 26px rgba(0,229,255,.28);
+}
+.btn--ghost{
+  background:rgba(255,255,255,.035); border-color:rgba(160,169,184,.26);
+  -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06), 0 3px 0 rgba(0,0,0,.35);
+}
+.btn--ghost:hover,.btn--ghost:focus-visible{
+  --tilt:10deg; transform:perspective(700px) translateY(-3px) rotateX(var(--tilt)) scale(1.02);
+  background:rgba(0,229,255,.07); border-color:rgba(0,229,255,.6); color:#fff;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12), 0 6px 0 rgba(0,229,255,.14), 0 20px 40px -14px rgba(0,229,255,.45);
+}
+.btn--sm{min-height:42px; padding:.6rem 1rem; font-size:.92rem; border-radius:12px}
+.btn-row{display:flex; flex-wrap:wrap; gap:.9rem}
+
+/* =========================================================
+   5. NAVIGATION
+   ========================================================= */
+.site-header{position:sticky; top:0; z-index:50; padding:14px 0 0; padding-top:calc(14px + env(safe-area-inset-top,0px))}
+.nav{position:relative; display:flex; align-items:center; gap:1rem; width:min(1240px, 100% - 1.5rem); margin-inline:auto;
+  padding:.55rem .6rem .55rem 1rem; border-radius:18px; background:rgba(10,13,20,.66); border:1px solid rgba(120,160,255,.16);
+  -webkit-backdrop-filter:blur(18px) saturate(140%); backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:0 10px 40px -12px rgba(0,0,0,.7), 0 0 0 1px rgba(71,135,255,.06), 0 0 40px -18px rgba(71,135,255,.6)}
+.brand{display:flex; align-items:center; gap:.7rem; text-decoration:none; font-family:var(--font-display); font-weight:600; flex:none}
+.brand__mark{display:grid; place-items:center; width:38px; height:38px; border-radius:11px; font-weight:800; font-size:.9rem; color:#fff;
+  background:linear-gradient(145deg, rgba(71,135,255,.9), rgba(0,229,255,.55)); box-shadow:inset 0 1px 0 rgba(255,255,255,.35), 0 6px 18px -6px rgba(0,229,255,.6)}
+.brand__name{font-size:.98rem}
+.nav__links{display:flex; align-items:center; gap:.15rem; margin-left:auto}
+.nav__link{display:block; padding:.5rem .7rem; border-radius:10px; font-size:.88rem; font-weight:600; color:var(--muted); text-decoration:none; border:1px solid transparent;
+  transform:perspective(500px) translateY(0) rotateX(0);
+  transition:transform var(--t-med) var(--ease), color var(--t-fast), background-color var(--t-fast), border-color var(--t-fast), box-shadow var(--t-med)}
+.nav__link:hover,.nav__link:focus-visible{color:#fff; background:rgba(71,135,255,.1); border-color:rgba(71,135,255,.4);
+  transform:perspective(500px) translateY(-2px) rotateX(14deg); box-shadow:0 4px 0 rgba(71,135,255,.18), 0 12px 24px -10px rgba(71,135,255,.6)}
+.nav__link--cta{color:#fff; background:linear-gradient(135deg, var(--blue-deep), var(--blue-ink)); border-color:rgba(120,165,255,.4); box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 3px 0 #15358F}
+.nav__link--cta:hover,.nav__link--cta:focus-visible{background:linear-gradient(135deg, var(--blue-deep), var(--blue-ink)); border-color:rgba(0,229,255,.7); box-shadow:inset 0 1px 0 rgba(255,255,255,.3), 0 6px 0 #122E7C, 0 16px 30px -10px rgba(71,135,255,.8)}
+.nav__toggle{position:absolute; opacity:0; width:1px; height:1px; pointer-events:none}
+.nav__burger{display:none; margin-left:auto; width:46px; height:46px; border-radius:12px; border:1px solid rgba(160,169,184,.26); background:rgba(255,255,255,.04);
+  place-items:center; transition:transform var(--t-med) var(--ease), border-color var(--t-fast), box-shadow var(--t-med)}
+.nav__burger:hover{transform:perspective(500px) translateY(-2px) rotateX(14deg); border-color:rgba(0,229,255,.6); box-shadow:0 5px 0 rgba(0,229,255,.14), 0 14px 26px -12px rgba(0,229,255,.6)}
+.nav__burger span,.nav__burger span::before,.nav__burger span::after{display:block; width:20px; height:2px; border-radius:2px; background:var(--text); transition:transform var(--t-fast), background-color var(--t-fast)}
+.nav__burger span{position:relative}
+.nav__burger span::before,.nav__burger span::after{content:""; position:absolute; left:0}
+.nav__burger span::before{top:-6px} .nav__burger span::after{top:6px}
+.nav__toggle:focus-visible + .nav__burger{outline:2px solid var(--cyan); outline-offset:3px}
+.nav__toggle:checked + .nav__burger span{background:transparent}
+.nav__toggle:checked + .nav__burger span::before{transform:translateY(6px) rotate(45deg)}
+.nav__toggle:checked + .nav__burger span::after{transform:translateY(-6px) rotate(-45deg)}
+
+/* =========================================================
+   6. HERO
+   ========================================================= */
+.hero{position:relative; min-height:calc(100vh - 80px); min-height:calc(100svh - 80px); display:flex; align-items:center; padding-block:clamp(3rem,7vw,6rem) clamp(5rem,9vw,7rem); overflow:hidden}
+.hero__floor{position:absolute; left:-50%; right:-50%; bottom:-6%; height:58%; pointer-events:none; z-index:-1;
+  background-image:linear-gradient(rgba(71,135,255,.22) 1px, transparent 1px), linear-gradient(90deg, rgba(71,135,255,.22) 1px, transparent 1px);
+  background-size:64px 64px; transform:perspective(600px) rotateX(72deg); transform-origin:50% 100%;
+  -webkit-mask-image:linear-gradient(to top, #000 10%, transparent 85%); mask-image:linear-gradient(to top, #000 10%, transparent 85%);
+  animation:floor 7s linear infinite}
+@keyframes floor{to{background-position:0 64px, 0 0}}
+.hero__horizon{position:absolute; left:0; right:0; bottom:40%; height:1px; z-index:-1; background:linear-gradient(90deg, transparent, rgba(0,229,255,.45), transparent); box-shadow:0 0 30px 6px rgba(0,229,255,.12)}
+.hero__grid{display:grid; grid-template-columns:1.12fr .88fr; gap:clamp(2rem,5vw,4.5rem); align-items:center}
+.hero__intro{display:inline-flex; align-items:center; gap:.65rem; padding:.4rem .9rem .4rem .5rem; border-radius:999px; font-size:.9rem; color:var(--muted);
+  background:rgba(255,255,255,.04); border:1px solid var(--line)}
+.hero__intro .dot{width:9px; height:9px; border-radius:50%; background:var(--emerald); box-shadow:0 0 0 4px rgba(0,214,160,.16), 0 0 12px var(--emerald)}
+.hero__name{margin-top:var(--s-4); font-size:clamp(3rem, 8.4vw, 6.6rem); font-weight:800; line-height:.92; letter-spacing:-.045em;
+  background:linear-gradient(180deg, #FFFFFF 30%, #9FB8E8 110%); -webkit-background-clip:text; background-clip:text; color:transparent;
+  filter:drop-shadow(0 12px 40px rgba(71,135,255,.25))}
+.hero__name span{display:block}
+.hero__title{display:flex; align-items:center; gap:1rem; margin-top:var(--s-4); font-family:var(--font-display); font-weight:400; font-size:clamp(1rem,1.6vw,1.2rem); letter-spacing:.34em; color:var(--cyan)}
+.hero__title::after{content:""; flex:1; max-width:160px; height:1px; background:linear-gradient(90deg, rgba(0,229,255,.7), transparent)}
+.hero__headline{margin-top:var(--s-4); font-size:clamp(1.3rem, 2.2vw, 1.75rem); font-weight:600; line-height:1.3; max-width:30ch; color:var(--text)}
+.hero__desc{margin-top:var(--s-3); color:var(--muted); max-width:58ch}
+.hero .btn-row{margin-top:var(--s-5)}
+.tags{display:flex; flex-wrap:wrap; gap:.5rem; margin-top:var(--s-5)}
+.tag{padding:.38rem .8rem; border-radius:999px; font-size:.84rem; font-weight:600; color:#CFE0FF; background:rgba(71,135,255,.08); border:1px solid rgba(71,135,255,.24)}
+.tags .tag:nth-child(3n+1){animation:bob 5.5s ease-in-out infinite}
+.tags .tag:nth-child(4n+2){animation:bob 7s ease-in-out -2s infinite}
+@keyframes bob{50%{translate:0 -5px}}
+
+/* Hero 3D composition: floating requirement documents */
+.art{position:relative; width:100%; max-width:480px; aspect-ratio:4/5; margin-inline:auto; perspective:1100px}
+.art__stage{position:absolute; inset:0; transform-style:preserve-3d; transform:rotateX(16deg) rotateY(-26deg); animation:sway 16s ease-in-out infinite alternate}
+@keyframes sway{0%{transform:rotateX(20deg) rotateY(-34deg) rotateZ(1deg)} 100%{transform:rotateX(9deg) rotateY(-12deg) rotateZ(-1deg)}}
+.doc{position:absolute; width:64%; height:52%; left:var(--l); top:var(--t); padding:18px 18px 16px; border-radius:18px;
+  background:linear-gradient(160deg, rgba(71,135,255,.2), rgba(17,23,34,.82) 55%); border:1px solid rgba(160,190,255,.26);
+  box-shadow:0 40px 70px -30px rgba(0,0,0,.85), inset 0 1px 0 rgba(255,255,255,.14), 0 0 40px -20px rgba(0,229,255,.5);
+  transform:translateZ(var(--z)); animation:hover-doc 8s ease-in-out var(--dl) infinite alternate}
+@keyframes hover-doc{to{translate:0 -14px}}
+.doc__label{display:flex; justify-content:space-between; align-items:center; font-family:var(--font-display); font-weight:700; font-size:1.05rem; color:#fff}
+.doc__label small{font:600 .7rem var(--font-body); color:var(--cyan); padding:.2rem .5rem; border-radius:6px; background:rgba(0,229,255,.1); border:1px solid rgba(0,229,255,.25)}
+.doc__sub{font-size:.76rem; color:var(--muted); margin-top:.15rem}
+.doc__lines{margin-top:14px; display:grid; gap:8px}
+.doc__lines b{display:block; height:6px; border-radius:4px; background:linear-gradient(90deg, rgba(160,190,255,.35), rgba(160,190,255,.08)); width:var(--w,100%)}
+.doc__checks{margin-top:12px; display:grid; gap:9px}
+.doc__checks b{display:flex; align-items:center; gap:8px; height:8px}
+.doc__checks b::before{content:""; width:10px; height:10px; border-radius:3px; flex:none; background:var(--emerald); box-shadow:0 0 10px rgba(0,214,160,.6)}
+.doc__checks b::after{content:""; height:6px; border-radius:4px; width:var(--w,80%); background:rgba(160,190,255,.22)}
+.doc--1{--l:34%; --t:2%;  --z:-160px; --dl:0s}
+.doc--2{--l:22%; --t:16%; --z:-60px;  --dl:-2s}
+.doc--3{--l:10%; --t:30%; --z:40px;   --dl:-4s}
+.doc--4{--l:0%;  --t:44%; --z:140px;  --dl:-6s; background:linear-gradient(160deg, rgba(0,229,255,.18), rgba(17,23,34,.9) 55%); border-color:rgba(0,229,255,.35)}
+.art__orbit{position:absolute; left:-6%; right:-6%; top:10%; aspect-ratio:1; border-radius:50%; border:1px solid rgba(0,229,255,.22); transform:translateZ(-40px) rotateX(76deg); animation:orbit 24s linear infinite}
+.art__orbit::after{content:""; position:absolute; top:-6px; left:50%; width:12px; height:12px; border-radius:50%; background:var(--cyan); box-shadow:0 0 18px 4px rgba(0,229,255,.7)}
+.art__orbit--2{left:8%; right:8%; top:22%; border-color:rgba(155,114,255,.22); border-style:dashed; animation-duration:36s; animation-direction:reverse}
+.art__orbit--2::after{background:var(--violet); box-shadow:0 0 16px 3px rgba(155,114,255,.7)}
+@keyframes orbit{from{transform:translateZ(-40px) rotateX(76deg) rotateZ(0)} to{transform:translateZ(-40px) rotateX(76deg) rotateZ(360deg)}}
+.art__orb{position:absolute; right:2%; top:4%; width:86px; height:86px; border-radius:50%; transform:translateZ(80px);
+  background:radial-gradient(circle at 32% 28%, rgba(255,255,255,.75), rgba(0,229,255,.35) 22%, rgba(71,135,255,.18) 55%, rgba(71,135,255,.04) 72%);
+  box-shadow:inset -10px -14px 30px rgba(8,10,15,.6), 0 0 50px -6px rgba(0,229,255,.45); animation:hover-doc 6s ease-in-out infinite alternate}
+.art__flow{position:absolute; left:6%; top:20%; bottom:14%; width:2px; transform:translateZ(0);
+  background:linear-gradient(180deg, transparent, rgba(0,229,255,.6), transparent); background-size:100% 200%; animation:pulse-line 3s linear infinite}
+@keyframes pulse-line{from{background-position:0 100%} to{background-position:0 -100%}}
+
+/* =========================================================
+   7. CARDS & GLASS
+   ========================================================= */
+.card{position:relative; padding:clamp(1.4rem,2.4vw,1.9rem); border-radius:var(--r-lg); background:linear-gradient(170deg, rgba(22,30,45,.72), rgba(17,23,34,.6));
+  border:1px solid var(--line); box-shadow:var(--shadow-card);
+  transform:perspective(900px) translateY(0) rotateX(0);
+  transition:transform var(--t-med) var(--ease), border-color var(--t-fast), box-shadow var(--t-med)}
+.card--lift:hover{transform:perspective(900px) translateY(-6px) rotateX(3deg); border-color:rgba(71,135,255,.42); box-shadow:0 30px 60px -24px rgba(0,0,0,.8), 0 0 0 1px rgba(71,135,255,.12), 0 20px 50px -20px rgba(71,135,255,.4)}
+.glass{background:var(--glass); -webkit-backdrop-filter:blur(16px); backdrop-filter:blur(16px); border:1px solid rgba(160,190,255,.14)}
+:where(.card) h3{font-size:1.2rem}
+:where(.card) p{color:var(--muted); margin-top:.55rem; font-size:1rem}
+
+.grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem}
+.grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem}
+
+/* About */
+.about__lead{display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.5rem,4vw,4rem); margin-bottom:clamp(2.5rem,5vw,4rem)}
+.about__lead p{color:var(--muted)}
+.about__lead p + p{margin-top:1rem}
+.about__lead .big{font-family:var(--font-display); font-size:clamp(1.25rem,2vw,1.55rem); line-height:1.4; color:var(--text); font-weight:400}
+.facet__icon{display:grid; place-items:center; width:48px; height:48px; border-radius:14px; margin-bottom:1rem; font:700 .95rem var(--font-display); color:#fff;
+  background:linear-gradient(145deg, rgba(71,135,255,.35), rgba(0,229,255,.12)); border:1px solid rgba(120,170,255,.3); box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 10px 24px -12px rgba(0,229,255,.7);
+  transform:perspective(300px) rotateX(18deg) rotateY(-14deg)}
+/* =========================================================
+   8. EXPERIENCE TIMELINE
+   ========================================================= */
+.tl{position:relative; display:grid; gap:1.6rem; padding-left:44px}
+.tl::before{content:""; position:absolute; left:14px; top:8px; bottom:8px; width:2px; border-radius:2px;
+  background:linear-gradient(180deg, rgba(0,229,255,.0), rgba(0,229,255,.9) 20%, rgba(71,135,255,.9) 50%, rgba(155,114,255,.4) 80%, transparent) 0 0/100% 200%;
+  animation:rail 6s linear infinite}
+@keyframes rail{to{background-position:0 -200%}}
+.tl__item{position:relative}
+.tl__node{position:absolute; left:-38px; top:30px; width:18px; height:18px; border-radius:50%; background:var(--bg); border:2px solid var(--cyan);
+  box-shadow:0 0 0 5px rgba(0,229,255,.1), 0 0 18px rgba(0,229,255,.7); animation:node 2.8s ease-in-out infinite}
+.tl__item--past .tl__node{border-color:var(--violet); box-shadow:0 0 0 5px rgba(155,114,255,.1), 0 0 14px rgba(155,114,255,.6)}
+@keyframes node{50%{box-shadow:0 0 0 9px rgba(0,229,255,.04), 0 0 28px rgba(0,229,255,.95)}}
+.role{display:flex; flex-wrap:wrap; justify-content:space-between; gap:.5rem 1.5rem; align-items:baseline}
+.role h3{font-size:clamp(1.3rem,2.2vw,1.6rem)}
+.role__org{color:var(--cyan); font-weight:600; margin-top:.25rem}
+.role__meta{color:var(--muted); font-size:.95rem}
+.role__meta span{display:inline-block; padding:.25rem .7rem; border-radius:999px; background:rgba(255,255,255,.04); border:1px solid var(--line)}
+.resp{margin-top:1.4rem; display:grid; grid-template-columns:1fr 1fr; gap:.7rem}
+.disc{border-radius:var(--r-md); background:rgba(8,10,15,.45); border:1px solid var(--line); transition:border-color var(--t-fast), background-color var(--t-fast)}
+.disc[open]{border-color:rgba(71,135,255,.4); background:rgba(71,135,255,.05)}
+.disc > summary{list-style:none; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.9rem 1rem; font-weight:700; font-size:.98rem; border-radius:inherit;
+  transform:perspective(600px) translateY(0) rotateX(0); transition:transform var(--t-med) var(--ease), background-color var(--t-fast), box-shadow var(--t-med)}
+.disc > summary::-webkit-details-marker{display:none}
+.disc > summary:hover{transform:perspective(600px) translateY(-2px) rotateX(8deg); background:rgba(71,135,255,.08); box-shadow:0 10px 24px -14px rgba(71,135,255,.8)}
+.disc > summary::after{content:""; flex:none; width:22px; height:22px; border-radius:7px; border:1px solid rgba(0,229,255,.4);
+  background:linear-gradient(var(--cyan),var(--cyan)) center/10px 2px no-repeat, linear-gradient(var(--cyan),var(--cyan)) center/2px 10px no-repeat; transition:transform var(--t-fast)}
+.disc[open] > summary::after{transform:rotate(45deg)}
+.disc__body{padding:0 1rem 1rem}
+.disc__body ul{display:grid; gap:.45rem}
+.bul li{position:relative; padding-left:1.2rem; color:var(--muted); font-size:.97rem}
+.bul li::before{content:""; position:absolute; left:0; top:.62em; width:6px; height:6px; border-radius:2px; background:var(--cyan); box-shadow:0 0 8px rgba(0,229,255,.7)}
+.bul strong{color:var(--text); font-weight:700}
+.earlier{display:grid; grid-template-columns:1fr 1fr; gap:1.25rem}
+.earlier .bul{margin-top:1.1rem}
+
+/* =========================================================
+   9. EDUCATION
+   ========================================================= */
+.edu{display:flex; gap:1.4rem; align-items:flex-start}
+.edu__badge{flex:none; width:84px; height:84px; perspective:400px}
+.edu__badge span{display:grid; place-items:center; width:100%; height:100%; border-radius:20px; font:800 1.15rem var(--font-display); color:#fff;
+  background:linear-gradient(150deg, rgba(71,135,255,.55), rgba(155,114,255,.3)); border:1px solid rgba(170,190,255,.35);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.3), 0 10px 0 -2px rgba(28,71,196,.55), 0 26px 40px -16px rgba(71,135,255,.8);
+  transform:rotateX(16deg) rotateY(-18deg); transition:transform var(--t-med) var(--ease)}
+.card--lift:hover .edu__badge span{transform:rotateX(4deg) rotateY(8deg) translateZ(20px)}
+.edu h3{font-size:1.3rem}
+.edu__spec{color:var(--cyan); font-weight:600; margin-top:.35rem}
+.edu__meta{display:flex; flex-wrap:wrap; gap:.5rem 1rem; margin-top:.8rem; color:var(--muted)}
+.edu__year{font-family:var(--font-display); font-weight:700; color:var(--text)}
+
+/* =========================================================
+   10. SKILLS & TOOLS
+   ========================================================= */
+.skill h3{display:flex; align-items:center; gap:.7rem}
+.skill h3::before{content:""; width:10px; height:10px; border-radius:3px; background:var(--accent,var(--blue)); box-shadow:0 0 12px var(--accent,var(--blue)); transform:rotate(45deg)}
+.chips{display:flex; flex-wrap:wrap; gap:.45rem; margin-top:1.1rem}
+.chip{padding:.32rem .7rem; border-radius:8px; font-size:.86rem; font-weight:600; color:#D6E2F5; background:rgba(255,255,255,.04); border:1px solid var(--line);
+  transition:background-color var(--t-fast), border-color var(--t-fast), color var(--t-fast), translate var(--t-fast)}
+.skill:hover .chip{border-color:rgba(71,135,255,.3)}
+.chip:hover{background:rgba(71,135,255,.14); border-color:rgba(71,135,255,.6); color:#fff; translate:0 -2px}
+
+.tools{display:grid; grid-template-columns:repeat(4,1fr); gap:1.25rem}
+.tools__group h3{font-size:1.05rem; color:var(--muted); font-weight:600; font-family:var(--font-body); letter-spacing:0}
+.tool{display:flex; gap:.9rem; align-items:flex-start; margin-top:1.1rem}
+.tool__ico{flex:none; display:grid; place-items:center; width:44px; height:44px; border-radius:12px; font:800 .8rem var(--font-display); color:#fff;
+  background:linear-gradient(150deg, var(--c1), var(--c2)); box-shadow:inset 0 1px 0 rgba(255,255,255,.3), 0 5px 0 -1px rgba(0,0,0,.45), 0 14px 24px -12px var(--c1);
+  transform:perspective(300px) rotateX(14deg); transition:transform var(--t-med) var(--ease)}
+.tool:hover .tool__ico{transform:perspective(300px) rotateX(0) translateY(-3px) scale(1.06)}
+.tool strong{display:block; font-size:1rem}
+.tool div span{display:block; color:var(--muted); font-size:.9rem; line-height:1.45}
+
+/* =========================================================
+   11. PROCESS JOURNEY
+   ========================================================= */
+.process{display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem 1.75rem; counter-reset:step}
+.step{position:relative; padding-top:72px}
+.step__num{position:absolute; top:0; left:0; display:grid; place-items:center; width:56px; height:56px; border-radius:16px; font:800 1.05rem var(--font-display); color:#fff;
+  background:linear-gradient(150deg, rgba(71,135,255,.9), rgba(0,229,255,.5)); box-shadow:inset 0 1px 0 rgba(255,255,255,.35), 0 7px 0 -1px #15358F, 0 0 28px -4px rgba(0,229,255,.6);
+  transform:perspective(300px) rotateX(18deg); z-index:1}
+.step::before{content:""; position:absolute; top:27px; left:64px; width:calc(100% + 1.75rem - 72px); height:2px; border-radius:2px;
+  background:linear-gradient(90deg, rgba(71,135,255,.15) 0%, rgba(0,229,255,.95) 50%, rgba(71,135,255,.15) 100%) 0 0/200% 100%; animation:flow 2.6s linear infinite}
+.step:nth-child(4n)::before,.step:last-child::before{display:none}
+@keyframes flow{to{background-position:-200% 0}}
+.step .card{height:100%; padding:1.3rem 1.3rem 1.4rem}
+.step h3{font-size:1.02rem; letter-spacing:.14em; color:var(--cyan)}
+.step p{color:var(--text); margin-top:.5rem; font-size:.98rem}
+.process .step:nth-child(n+5) .step__num{background:linear-gradient(150deg, rgba(155,114,255,.9), rgba(71,135,255,.55)); box-shadow:inset 0 1px 0 rgba(255,255,255,.35), 0 7px 0 -1px #3D2A8A, 0 0 28px -4px rgba(155,114,255,.7)}
+.process .step:nth-child(n+5) h3{color:#C4AEFF}
+
+/* =========================================================
+   12. CASE STUDY
+   ========================================================= */
+.case{display:grid; grid-template-columns:1.25fr .75fr; gap:1.5rem; align-items:start}
+.case__context{font-size:1.15rem; color:var(--text); max-width:56ch}
+.case__label{font-weight:700; color:var(--muted); font-size:.95rem; margin-bottom:.5rem}
+.flows{display:grid; gap:1.1rem; margin-top:1.8rem}
+.flow{display:grid; grid-template-columns:128px 1fr; gap:1rem; align-items:center; padding-top:1.1rem; border-top:1px solid var(--line)}
+.flow__name{font-family:var(--font-display); font-weight:600; color:var(--cyan)}
+.flow__chain{display:flex; flex-wrap:wrap; align-items:center; gap:.4rem}
+.flow__chain li{position:relative; display:flex; align-items:center; gap:.4rem; font-size:.92rem; font-weight:600}
+.flow__chain li span{padding:.3rem .65rem; border-radius:8px; background:rgba(71,135,255,.09); border:1px solid rgba(71,135,255,.24)}
+.flow__chain li + li::before{content:""; width:8px; height:8px; border-top:2px solid var(--cyan); border-right:2px solid var(--cyan); transform:rotate(45deg); margin-right:.3rem; opacity:.8}
+.case__tools{margin-top:1.6rem; display:flex; flex-wrap:wrap; gap:.45rem}
+.kpis{display:grid; gap:1rem}
+.kpi{padding:1.3rem 1.4rem}
+.kpi__num{display:flex; align-items:baseline; font-family:var(--font-display); font-weight:800; font-size:clamp(2.6rem,5vw,3.6rem); line-height:1; letter-spacing:-.04em;
+  background:linear-gradient(180deg,#fff,#8FB4FF); -webkit-background-clip:text; background-clip:text; color:transparent}
+.kpi__num small{font-size:.5em; margin-left:.1em}
+.kpi__label{color:var(--muted); margin-top:.4rem; font-size:.98rem}
+.count{--n:var(--to); counter-reset:n var(--n)}
+.count::before{content:counter(n)}
+@keyframes count{from{--n:0} to{--n:var(--to)}}
+
+/* =========================================================
+   13. INTEGRATION ECOSYSTEM
+   ========================================================= */
+.eco-wrap{display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(2rem,5vw,4rem); align-items:center}
+.eco-wrap .lead{font-size:1.15rem; color:var(--text)}
+.eco-wrap .note{color:var(--muted); margin-top:1rem}
+.eco{position:relative; width:min(600px,100%); aspect-ratio:1; margin-inline:auto; container-type:inline-size}
+.eco::before{content:""; position:absolute; inset:9%; border-radius:50%; border:1px dashed rgba(71,135,255,.2)}
+.eco::after{content:""; position:absolute; inset:28%; border-radius:50%; background:radial-gradient(circle, rgba(71,135,255,.22), transparent 70%)}
+.eco__core{position:absolute; left:50%; top:50%; z-index:3; width:40cqi; translate:-50% -50%; padding:1rem; border-radius:22px; text-align:center;
+  background:linear-gradient(160deg, rgba(71,135,255,.3), rgba(13,17,26,.92) 70%); border:1px solid rgba(0,229,255,.45);
+  box-shadow:0 0 0 6px rgba(0,229,255,.05), 0 0 60px -10px rgba(0,229,255,.6), inset 0 1px 0 rgba(255,255,255,.18)}
+.eco__core strong{display:block; font-family:var(--font-display); font-weight:700; font-size:clamp(.85rem,3.6cqi,1.1rem); line-height:1.25}
+.eco__core span{display:block; margin-top:.3rem; font-size:clamp(.7rem,2.6cqi,.82rem); color:var(--cyan)}
+.eco__spoke{position:absolute; left:50%; top:50%; width:2px; height:40cqi; margin-left:-1px; transform-origin:50% 0; transform:rotate(calc(var(--a) + 180deg));
+  background:linear-gradient(180deg, rgba(71,135,255,.08), rgba(71,135,255,.45)); z-index:1}
+.eco__spoke::after{content:""; position:absolute; left:-3px; top:0; width:8px; height:8px; border-radius:50%; background:var(--cyan); box-shadow:0 0 12px 3px rgba(0,229,255,.8);
+  animation:packet 3.2s var(--ease) var(--dl,0s) infinite}
+@keyframes packet{0%{translate:0 0; opacity:0} 15%{opacity:1} 85%{opacity:1} 100%{translate:0 38cqi; opacity:0}}
+.eco__node{position:absolute; left:50%; top:50%; z-index:2; width:23cqi; padding:.55rem .4rem; border-radius:14px; text-align:center;
+  font-family:var(--font-display); font-weight:700; font-size:clamp(.72rem,2.9cqi,.95rem); line-height:1.2;
+  background:rgba(13,17,26,.92); border:1px solid rgba(160,190,255,.26); box-shadow:0 12px 30px -14px rgba(0,0,0,.9), inset 0 1px 0 rgba(255,255,255,.08);
+  transform:translate(-50%,-50%) rotate(var(--a)) translateY(-40cqi) rotate(calc(-1 * var(--a)));
+  transition:border-color var(--t-fast), box-shadow var(--t-med)}
+.eco__node small{display:block; font-family:var(--font-body); font-weight:600; font-size:clamp(.62rem,2.2cqi,.74rem); color:var(--muted); margin-top:.15rem}
+.eco__node:hover{border-color:rgba(0,229,255,.6); box-shadow:0 0 30px -6px rgba(0,229,255,.6)}
+.workflow{margin-top:2.2rem}
+.workflow .flow__chain li span{background:rgba(0,214,160,.08); border-color:rgba(0,214,160,.28)}
+.workflow .flow__chain li + li::before{border-color:var(--emerald)}
+
+/* =========================================================
+   14. CLARITY FEATURE
+   ========================================================= */
+.clarity{display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,4rem); align-items:center; padding:clamp(1.8rem,4vw,3.2rem); border-radius:var(--r-xl)}
+.clarity h2{font-size:clamp(1.8rem,3.6vw,2.7rem)}
+.clarity p{color:var(--muted); margin-top:1rem}
+.clarity .outcome{margin-top:1.4rem; padding:1rem 1.2rem; border-radius:var(--r-md); border-left:3px solid var(--emerald); background:rgba(0,214,160,.06); color:var(--text)}
+.clarity .outcome strong{color:var(--emerald)}
+.planes{position:relative; height:280px; perspective:900px}
+.planes__stage{position:absolute; inset:0; transform-style:preserve-3d; transform:rotateX(58deg) rotateZ(-32deg)}
+.plane{position:absolute; left:15%; right:15%; top:24%; height:52%; border-radius:16px; display:flex; align-items:flex-end; padding:14px 16px;
+  font:700 .85rem var(--font-display); color:#fff; border:1px solid var(--pc); background:rgba(13,17,26,.85); background:linear-gradient(150deg, color-mix(in srgb, var(--pc) 28%, transparent), rgba(13,17,26,.85));
+  box-shadow:0 0 40px -12px var(--pc); transform:translateZ(var(--z)); transition:transform var(--t-slow) var(--ease)}
+.plane--a{--pc:#4787FF; --z:0px} .plane--b{--pc:#00E5FF; --z:60px} .plane--c{--pc:#9B72FF; --z:120px}
+.clarity:hover .plane--a{transform:translateZ(0)} .clarity:hover .plane--b{transform:translateZ(20px)} .clarity:hover .plane--c{transform:translateZ(40px)}
+/* =========================================================
+   15. PROJECTS
+   ========================================================= */
+.pgroup + .pgroup{margin-top:clamp(2.8rem,5vw,4rem)}
+.pgroup__head{display:flex; align-items:center; gap:1rem; margin-bottom:1.3rem}
+.pgroup__head h3{font-size:1.35rem}
+.pgroup__head::after{content:""; flex:1; height:1px; background:linear-gradient(90deg, var(--line-2), transparent)}
+.pgroup__ico{display:grid; place-items:center; width:40px; height:40px; border-radius:11px; font:800 .75rem var(--font-display); color:#fff; background:linear-gradient(150deg,var(--c1),var(--c2)); box-shadow:inset 0 1px 0 rgba(255,255,255,.3), 0 10px 20px -10px var(--c1)}
+.proj{display:flex; flex-direction:column}
+.proj::before{content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; opacity:0; transition:opacity var(--t-med);
+  background:radial-gradient(120% 60% at 0% 0%, rgba(71,135,255,.16), transparent 60%)}
+.proj:hover::before{opacity:1}
+.proj__top{display:flex; justify-content:space-between; align-items:center; gap:1rem}
+.proj__no{font:800 .9rem var(--font-display); color:var(--cyan)}
+.proj__badge{font-size:.76rem; font-weight:700; color:var(--muted); padding:.22rem .6rem; border-radius:999px; border:1px solid var(--line)}
+.proj h4{font-size:1.25rem; margin-top:.8rem; line-height:1.25}
+.proj__meta{display:grid; grid-template-columns:auto 1fr; gap:.3rem 1rem; margin:1rem 0 0; font-size:.92rem}
+.proj__meta dt{color:var(--dim); font-weight:600}
+.proj__meta dd{margin:0; color:#D6E2F5}
+.proj__problem{margin-top:1rem; color:var(--muted); font-size:.98rem}
+.proj .chips{margin-top:1rem}
+.proj__more{margin-top:auto; padding-top:1.3rem}
+.proj__more > summary{list-style:none}
+.proj__more > summary::-webkit-details-marker{display:none}
+.proj__more > summary .when-open{display:none}
+.proj__more[open] > summary .when-open{display:inline}
+.proj__more[open] > summary .when-closed{display:none}
+.proj__more .caret{width:8px; height:8px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:rotate(45deg) translateY(-2px); transition:transform var(--t-fast)}
+.proj__more[open] .caret{transform:rotate(-135deg) translateY(-2px)}
+.proj__detail{margin-top:1.1rem; padding-top:1.1rem; border-top:1px solid var(--line); display:grid; gap:1rem}
+.proj__detail h5{margin:0 0 .45rem; font:700 .92rem var(--font-display); color:var(--text)}
+.proj__detail .bul li{font-size:.93rem}
+.proj__detail p{font-size:.93rem; color:var(--muted)}
+.pipeline{display:flex; flex-wrap:wrap; gap:.35rem}
+.pipeline li{font-size:.82rem; font-weight:600; padding:.25rem .55rem; border-radius:7px; background:rgba(155,114,255,.1); border:1px solid rgba(155,114,255,.28)}
+.disclaimer{margin-top:1.1rem; color:var(--dim); font-size:.92rem}
+
+/* =========================================================
+   16. ARTIFACT LIBRARY
+   ========================================================= */
+.lib{display:grid; grid-template-columns:repeat(4,1fr); gap:1.4rem}
+.lib__col h3{font-size:1.05rem; margin-bottom:1rem; display:flex; align-items:center; gap:.6rem}
+.lib__col h3 span{font:600 .8rem var(--font-body); color:var(--muted)}
+.lib__col ul{display:grid; gap:.85rem}
+.artifact{position:relative; padding:1rem 1.1rem 1rem 1.1rem; border-radius:12px 20px 12px 12px; background:linear-gradient(170deg, #151C29, #0F141E);
+  border:1px solid var(--line); clip-path:polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%);
+  transform:perspective(700px) translateY(0) rotateX(0) rotateY(0); transition:transform var(--t-med) var(--ease), border-color var(--t-fast), background var(--t-fast)}
+.artifact::after{content:""; position:absolute; top:0; right:0; width:18px; height:18px; background:linear-gradient(225deg, transparent 50%, rgba(160,190,255,.3) 50%); border-bottom-left-radius:4px}
+.artifact::before{content:""; position:absolute; left:0; top:14px; bottom:14px; width:3px; border-radius:0 3px 3px 0; background:var(--ac,var(--blue)); box-shadow:0 0 12px var(--ac,var(--blue))}
+.artifact:hover{transform:perspective(700px) translateY(-4px) rotateX(6deg) rotateY(-4deg); border-color:rgba(71,135,255,.4); background:linear-gradient(170deg, #182235, #10172A)}
+.artifact strong{display:block; font:700 1rem var(--font-display)}
+.artifact span{display:block; margin-top:.25rem; color:var(--muted); font-size:.9rem; line-height:1.45}
+
+/* =========================================================
+   17. BA TOOLKIT MATRIX
+   ========================================================= */
+.matrix{display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-radius:var(--r-xl); overflow:hidden; border:1px solid var(--line); background:rgba(13,17,26,.6)}
+.stage{--c:var(--blue); position:relative; padding:1.8rem 1.5rem 2rem; border-right:1px solid var(--line);
+  transition:background-color var(--t-med), box-shadow var(--t-med), transform var(--t-med) var(--ease); transform:perspective(900px) translateZ(0)}
+.stage:last-child{border-right:0}
+.stage::before{content:""; position:absolute; left:0; right:0; top:0; height:3px; background:var(--c); box-shadow:0 0 18px var(--c)}
+.stage:hover{background:rgba(255,255,255,.03); background:color-mix(in srgb, var(--c) 8%, transparent); box-shadow:inset 0 0 60px -20px var(--c); transform:perspective(900px) translateZ(14px)}
+.stage h3{font-size:1.1rem; letter-spacing:.16em; color:var(--c)}
+.stage ol{margin-top:1.2rem; display:grid; gap:.6rem}
+.stage li{display:flex; align-items:center; gap:.7rem; font-weight:600; font-size:.98rem}
+.stage li::before{content:""; flex:none; width:7px; height:7px; border-radius:50%; border:2px solid var(--c)}
+.stage--discover{--c:#4787FF} .stage--analyse{--c:#00E5FF} .stage--design{--c:#9B72FF} .stage--deliver{--c:#00D6A0}
+
+/* =========================================================
+   18. ACHIEVEMENTS
+   ========================================================= */
+.metrics{display:grid; grid-template-columns:repeat(5,1fr); gap:1rem}
+.metric{text-align:left; padding:1.5rem 1.3rem}
+.metric .kpi__num{font-size:clamp(2.6rem,4.8vw,3.8rem)}
+.wins{display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:1.25rem}
+.win h3{font-size:1.15rem}
+.win__tags{display:flex; flex-wrap:wrap; gap:.35rem; margin-top:.9rem}
+
+/* =========================================================
+   19. CAREER TIMELINE (horizontal)
+   ========================================================= */
+.career{position:relative; display:grid; grid-template-columns:repeat(6,1fr); gap:1rem; padding-top:44px}
+.career::before{content:""; position:absolute; left:0; right:0; top:15px; height:2px;
+  background:linear-gradient(90deg, rgba(155,114,255,.3), rgba(71,135,255,.9), rgba(0,229,255,.95), rgba(0,214,160,.7)) 0 0/200% 100%; animation:flow 8s linear infinite}
+.milestone{position:relative}
+.milestone::before{content:""; position:absolute; top:-37px; left:14px; width:14px; height:14px; border-radius:50%; background:var(--bg); border:2px solid var(--mc,var(--cyan));
+  box-shadow:0 0 0 5px color-mix(in srgb, var(--mc,var(--cyan)) 15%, transparent), 0 0 18px var(--mc,var(--cyan)); animation:node 3s ease-in-out infinite}
+.milestone .card{padding:1.1rem 1.15rem; height:100%}
+.milestone__year{font:800 1.05rem var(--font-display); color:var(--mc,var(--cyan))}
+.milestone h3{font-size:.98rem; margin-top:.45rem; line-height:1.3}
+.milestone p{margin-top:.3rem; font-size:.9rem}
+.milestone--edu{--mc:#9B72FF} .milestone--hr{--mc:#4787FF} .milestone--ba{--mc:#00E5FF} .milestone--now{--mc:#00D6A0}
+.milestone--now .card{border-color:rgba(0,214,160,.4); background:linear-gradient(170deg, rgba(0,214,160,.1), rgba(17,23,34,.6))}
+
+/* =========================================================
+   20. RESUME & CONTACT
+   ========================================================= */
+.resume{position:relative; overflow:hidden; text-align:center; padding:clamp(2.5rem,6vw,4.5rem) clamp(1.5rem,4vw,3rem); border-radius:var(--r-xl);
+  background:radial-gradient(80% 120% at 50% 0%, rgba(71,135,255,.22), transparent 60%), linear-gradient(180deg, rgba(17,23,34,.8), rgba(13,17,26,.9)); border:1px solid rgba(71,135,255,.25)}
+.resume::before{content:""; position:absolute; inset:auto -20% -60% -20%; height:120%; pointer-events:none;
+  background-image:linear-gradient(rgba(71,135,255,.16) 1px, transparent 1px), linear-gradient(90deg, rgba(71,135,255,.16) 1px, transparent 1px); background-size:48px 48px;
+  transform:perspective(500px) rotateX(70deg); -webkit-mask-image:linear-gradient(to top, #000, transparent 70%); mask-image:linear-gradient(to top, #000, transparent 70%)}
+.resume > *{position:relative}
+.resume h2{font-size:clamp(2rem,4.4vw,3.2rem)}
+.resume p{color:var(--muted); margin-top:.8rem; font-size:1.1rem}
+.resume .btn-row{justify-content:center; margin-top:2rem}
+.btn--xl{min-height:60px; padding:1rem 2rem; font-size:1.08rem; border-radius:16px}
+.placeholder-note{margin-top:1.2rem; font-size:.88rem; color:var(--dim)}
+
+.contact{display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(2rem,4vw,3.5rem); padding:clamp(1.8rem,4vw,3.2rem); border-radius:var(--r-xl);
+  box-shadow:0 40px 90px -40px rgba(71,135,255,.55), inset 0 1px 0 rgba(255,255,255,.06); position:relative; overflow:hidden}
+.contact::before{content:""; position:absolute; width:520px; height:520px; right:-200px; top:-240px; border-radius:50%; background:radial-gradient(circle, rgba(0,229,255,.18), transparent 65%); pointer-events:none}
+.contact h2{font-size:clamp(2rem,4.2vw,3.1rem)}
+.contact p{color:var(--muted); margin-top:1rem; max-width:48ch}
+.contact .btn-row{margin-top:2rem}
+.cinfo{display:grid; gap:.9rem; align-content:center; position:relative}
+.cinfo li{display:flex; gap:1rem; align-items:center; padding:1rem 1.1rem; border-radius:var(--r-md); background:rgba(8,10,15,.45); border:1px solid var(--line)}
+.cinfo__ico{flex:none; display:grid; place-items:center; width:42px; height:42px; border-radius:12px; background:rgba(71,135,255,.12); border:1px solid rgba(71,135,255,.3); color:var(--cyan)}
+.cinfo__ico svg{width:20px; height:20px}
+.cinfo small{display:block; color:var(--dim); font-weight:600; font-size:.82rem}
+.cinfo a,.cinfo span{font-weight:700; text-decoration:none; overflow-wrap:anywhere}
+.cinfo a:hover{color:var(--cyan)}
+
+.footer{padding:2.5rem 0 3rem; border-top:1px solid var(--line); color:var(--dim); font-size:.92rem}
+.footer .container{display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; align-items:center}
+
+/* =========================================================
+   21. ENTRANCE, COUNTERS (progressive enhancement)
+   ========================================================= */
+@keyframes reveal{from{opacity:0; translate:0 42px} to{opacity:1; translate:0 0}}
+@keyframes hero-in{from{opacity:0; translate:0 24px} to{opacity:1; translate:0 0}}
+@media (prefers-reduced-motion: no-preference){
+  .hero__copy > *{animation:hero-in .9s var(--ease) both}
+  .hero__copy > *:nth-child(2){animation-delay:.08s}
+  .hero__copy > *:nth-child(3){animation-delay:.16s}
+  .hero__copy > *:nth-child(4){animation-delay:.24s}
+  .hero__copy > *:nth-child(5){animation-delay:.32s}
+  .hero__copy > *:nth-child(6){animation-delay:.4s}
+  .hero__copy > *:nth-child(7){animation-delay:.48s}
+  .hero__copy > .tags{animation-delay:.56s}
+  .art{animation:hero-in 1.4s var(--ease) .3s both}
+  .count{animation:count 2.2s var(--ease) .2s both}
+  @supports (animation-timeline: view()){
+    .reveal{animation:reveal linear both; animation-timeline:view(); animation-range:entry 0% entry 70%}
+    .count{animation:count linear both; animation-timeline:view(); animation-range:entry 20% cover 45%}
+  }
+}
+
+/* =========================================================
+   22. RESPONSIVE
+   ========================================================= */
+@media (max-width:1180px){
+  .nav__burger{display:grid}
+  .nav__links{display:none; position:absolute; left:0; right:0; top:calc(100% + 10px); flex-direction:column; align-items:stretch; gap:.3rem; padding:.8rem;
+    border-radius:18px; background:rgba(10,13,20,.96); border:1px solid rgba(120,160,255,.18); box-shadow:0 30px 60px -20px rgba(0,0,0,.9);
+    max-height:calc(100vh - 110px); max-height:calc(100dvh - 110px); overflow-y:auto}
+  .nav__toggle:checked ~ .nav__links{display:grid; grid-template-columns:1fr 1fr}
+  .nav__link{padding:.75rem .9rem; font-size:.98rem}
+  .metrics{grid-template-columns:repeat(3,1fr)}
+  .career{grid-template-columns:repeat(3,1fr); row-gap:3.2rem}
+  .career::before{display:none}
+  .milestone::before{top:-30px}
+}
+@media (max-width:1024px){
+  .hero__grid{grid-template-columns:1fr}
+  .art{max-width:380px}
+  .grid-3,.tools,.lib{grid-template-columns:repeat(2,1fr)}
+  .process{grid-template-columns:repeat(2,1fr)}
+  .step:nth-child(4n)::before{display:block}
+  .step:nth-child(2n)::before,.step:last-child::before{display:none}
+  .case,.eco-wrap,.clarity,.contact,.about__lead{grid-template-columns:1fr}
+  .kpis{grid-template-columns:1fr 1fr}
+  .matrix{grid-template-columns:1fr 1fr}
+  .stage:nth-child(2){border-right:0}
+  .stage:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .wins{grid-template-columns:1fr}
+  .cube--1{display:none}
+  .particle:nth-child(n+14){display:none}
+}
+@media (max-width:720px){
+  body{font-size:1rem}
+  .container{width:min(1200px, 100% - 1.5rem)}
+  .brand__name{display:none}
+  .grid-3,.grid-2,.tools,.lib,.resp,.earlier,.kpis,.matrix{grid-template-columns:1fr}
+  .stage{border-right:0; border-bottom:1px solid var(--line)}
+  .stage:last-child{border-bottom:0}
+  .metrics{grid-template-columns:1fr 1fr}
+  .process{grid-template-columns:1fr; gap:1rem}
+  .step{padding:0 0 0 76px}
+  .step::before{display:block!important; top:62px; left:27px; width:2px; height:calc(100% - 50px);
+    background:linear-gradient(180deg, rgba(71,135,255,.15), rgba(0,229,255,.95), rgba(71,135,255,.15)) 0 0/100% 200%; animation-name:flow-v}
+  .step:last-child::before{display:none!important}
+  .career{grid-template-columns:1fr; row-gap:1rem; padding:0 0 0 40px}
+  .career::before{display:block; left:14px; right:auto; top:8px; bottom:8px; width:2px; height:auto;
+    background:linear-gradient(180deg, rgba(155,114,255,.4), rgba(71,135,255,.9), rgba(0,229,255,.9), rgba(0,214,160,.6))}
+  .milestone::before{top:22px; left:-33px}
+  .flow{grid-template-columns:1fr; gap:.5rem}
+  .edu{flex-direction:column}
+  .tl{padding-left:34px}
+  .tl__node{left:-29px}
+  .tl::before{left:8px}
+  .nav__toggle:checked ~ .nav__links{grid-template-columns:1fr}
+  .btn-row .btn{flex:1 1 auto}
+  .hero__floor{height:40%}
+  .halo,.cube--2{display:none}
+  .particle:nth-child(n+9){display:none}
+  /* Integration map becomes a stacked list on small screens */
+  .eco{aspect-ratio:auto; display:grid; grid-template-columns:1fr 1fr; gap:.6rem; container-type:normal}
+  .eco::before,.eco::after,.eco__spoke{display:none}
+  .eco__core{position:relative; left:auto; top:auto; translate:none; width:auto; grid-column:1/-1; margin-bottom:.4rem}
+  .eco__core strong{font-size:1.05rem} .eco__core span{font-size:.82rem}
+  .eco__node{position:relative; left:auto; top:auto; width:auto; transform:none; font-size:.92rem; padding:.8rem .6rem}
+  .eco__node small{font-size:.76rem}
+  .planes{height:220px}
+  .art{max-width:320px; aspect-ratio:1/1; margin-top:1rem}
+  .art__stage{animation-name:sway-sm}
+  .doc{width:66%; height:50%}
+  .doc--1{--l:30%; --t:0%} .doc--2{--l:22%; --t:14%} .doc--3{--l:14%; --t:28%} .doc--4{--l:6%; --t:42%}
+}
+@keyframes sway-sm{0%{transform:rotateX(16deg) rotateY(-18deg) scale(.88)} 100%{transform:rotateX(8deg) rotateY(-6deg) scale(.88)}}
+@keyframes flow-v{to{background-position:0 -200%}}
+@media (max-width:420px){
+  .metrics{grid-template-columns:1fr}
+  .hero__title{letter-spacing:.24em}
+}
+
+/* =========================================================
+   23. REDUCED MOTION
+   ========================================================= */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important; transition-duration:.01ms!important}
+  .particle,.halo,.cube,.art__orbit::after,.eco__spoke::after{display:none}
+  .reveal{opacity:1; translate:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ===== Fixed 3D background: light, particles, geometry ===== -->
+<div class="scene" aria-hidden="true">
+  <div class="light light--a"></div>
+  <div class="light light--b"></div>
+  <div class="light light--c"></div>
+  <span class="particle" style="--x:8%;--y:18%;--s:6px;--o:.8;--z:120px;--d:14s;--mx:40px"></span>
+  <span class="particle" style="--x:18%;--y:72%;--s:4px;--o:.5;--z:-200px;--d:19s;--mx:-30px;--dl:-4s"></span>
+  <span class="particle" style="--x:27%;--y:40%;--s:3px;--o:.45;--z:-400px;--d:23s;--mx:20px;--dl:-9s"></span>
+  <span class="particle" style="--x:35%;--y:88%;--s:7px;--o:.7;--z:200px;--d:16s;--mx:-50px;--dl:-2s"></span>
+  <span class="particle" style="--x:44%;--y:12%;--s:4px;--o:.55;--z:-100px;--d:21s;--mx:30px;--dl:-11s"></span>
+  <span class="particle" style="--x:52%;--y:58%;--s:5px;--o:.6;--z:60px;--d:18s;--mx:-20px;--dl:-6s"></span>
+  <span class="particle" style="--x:61%;--y:30%;--s:3px;--o:.4;--z:-500px;--d:26s;--mx:44px;--dl:-3s"></span>
+  <span class="particle" style="--x:69%;--y:80%;--s:6px;--o:.75;--z:160px;--d:15s;--mx:-36px;--dl:-8s"></span>
+  <span class="particle" style="--x:76%;--y:46%;--s:4px;--o:.5;--z:-260px;--d:22s;--mx:26px;--dl:-12s"></span>
+  <span class="particle" style="--x:84%;--y:16%;--s:8px;--o:.65;--z:240px;--d:17s;--mx:-44px;--dl:-5s"></span>
+  <span class="particle" style="--x:91%;--y:66%;--s:3px;--o:.4;--z:-380px;--d:25s;--mx:18px;--dl:-14s"></span>
+  <span class="particle" style="--x:13%;--y:50%;--s:5px;--o:.55;--z:-60px;--d:20s;--mx:34px;--dl:-7s"></span>
+  <span class="particle" style="--x:57%;--y:92%;--s:4px;--o:.5;--z:-150px;--d:24s;--mx:-28px;--dl:-10s"></span>
+  <span class="particle" style="--x:39%;--y:24%;--s:6px;--o:.6;--z:100px;--d:18s;--mx:22px;--dl:-1s"></span>
+  <span class="particle" style="--x:95%;--y:38%;--s:5px;--o:.55;--z:40px;--d:21s;--mx:-38px;--dl:-13s"></span>
+  <span class="particle" style="--x:3%;--y:84%;--s:4px;--o:.45;--z:-320px;--d:27s;--mx:30px;--dl:-15s"></span>
+  <span class="particle" style="--x:72%;--y:6%;--s:3px;--o:.4;--z:-450px;--d:29s;--mx:-20px;--dl:-16s"></span>
+  <span class="particle" style="--x:48%;--y:74%;--s:7px;--o:.7;--z:180px;--d:16s;--mx:42px;--dl:-9s"></span>
+  <div class="cube cube--1"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="cube cube--2"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="halo"></div>
+</div>
+
+<!-- ===== Navigation (CSS-only mobile menu via checkbox) ===== -->
+<header class="site-header">
+  <nav class="nav" aria-label="Primary">
+    <a class="brand" href="#home"><span class="brand__mark" aria-hidden="true">RD</span><span class="brand__name">Renuka Devi</span><span class="sr-only"> home</span></a>
+    <input type="checkbox" id="nav-toggle" class="nav__toggle" aria-label="Show or hide the section menu">
+    <label for="nav-toggle" class="nav__burger" aria-hidden="true"><span></span></label>
+    <ul class="nav__links">
+      <li><a class="nav__link" href="#home">Home</a></li>
+      <li><a class="nav__link" href="#about">About</a></li>
+      <li><a class="nav__link" href="#experience">Experience</a></li>
+      <li><a class="nav__link" href="#skills">Skills</a></li>
+      <li><a class="nav__link" href="#projects">Projects</a></li>
+      <li><a class="nav__link" href="#toolkit">BA Toolkit</a></li>
+      <li><a class="nav__link" href="#achievements">Achievements</a></li>
+      <li><a class="nav__link" href="#education">Education</a></li>
+      <li><a class="nav__link" href="#resume">Resume</a></li>
+      <li><a class="nav__link nav__link--cta" href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- ===== 1. HERO ===== -->
+<section class="hero" id="home" aria-labelledby="hero-name">
+  <div class="hero__floor" aria-hidden="true"></div>
+  <div class="hero__horizon" aria-hidden="true"></div>
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="hero__intro"><span class="dot" aria-hidden="true"></span>Hello, I'm a Business Analyst based in Bengaluru</p>
+      <h1 class="hero__name" id="hero-name"><span>Renuka</span><span>Devi</span></h1>
+      <p class="hero__title">BUSINESS ANALYST</p>
+      <p class="hero__headline">Turning Business Problems Into Structured Requirements, Data-Driven Insights &amp; Practical Solutions</p>
+      <p class="hero__desc">Business Analyst experienced in requirements gathering, business process analysis, stakeholder engagement, Agile/Scrum, UAT, documentation, workflow optimization, business intelligence and client coordination.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="#projects">View My Projects</a>
+        <a class="btn btn--ghost" href="#experience">View My Experience</a>
+        <a class="btn btn--ghost" href="#resume">Download Resume</a>
+        <a class="btn btn--ghost" href="#contact">Let's Connect</a>
+      </div>
+      <ul class="tags" aria-label="Core capabilities">
+        <li class="tag">Requirements Analysis</li>
+        <li class="tag">BRD / FRD / PRD</li>
+        <li class="tag">User Stories</li>
+        <li class="tag">Agile / Scrum</li>
+        <li class="tag">UAT</li>
+        <li class="tag">Stakeholder Management</li>
+        <li class="tag">Process Improvement</li>
+        <li class="tag">Power BI</li>
+        <li class="tag">Excel</li>
+        <li class="tag">SQL</li>
+        <li class="tag">Figma</li>
+        <li class="tag">Jira</li>
+      </ul>
+    </div>
+
+    <!-- Abstract 3D composition: a stack of requirement documents -->
+    <div class="art" aria-hidden="true">
+      <div class="art__stage">
+        <div class="art__orbit"></div>
+        <div class="art__orbit art__orbit--2"></div>
+        <div class="art__flow"></div>
+        <div class="doc doc--1">
+          <div class="doc__label">BRD <small>Business</small></div>
+          <div class="doc__sub">Business requirements</div>
+          <div class="doc__lines"><b style="--w:92%"></b><b style="--w:78%"></b><b style="--w:86%"></b><b style="--w:60%"></b></div>
+        </div>
+        <div class="doc doc--2">
+          <div class="doc__label">PRD <small>Product</small></div>
+          <div class="doc__sub">Product requirements</div>
+          <div class="doc__lines"><b style="--w:84%"></b><b style="--w:95%"></b><b style="--w:70%"></b><b style="--w:82%"></b></div>
+        </div>
+        <div class="doc doc--3">
+          <div class="doc__label">FRD <small>Functional</small></div>
+          <div class="doc__sub">Functional requirements</div>
+          <div class="doc__lines"><b style="--w:96%"></b><b style="--w:74%"></b><b style="--w:88%"></b><b style="--w:55%"></b></div>
+        </div>
+        <div class="doc doc--4">
+          <div class="doc__label">User Stories <small>Agile</small></div>
+          <div class="doc__sub">Acceptance criteria</div>
+          <div class="doc__checks"><b style="--w:82%"></b><b style="--w:68%"></b><b style="--w:90%"></b><b style="--w:58%"></b></div>
+        </div>
+        <div class="art__orb"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2. ABOUT ===== -->
+<section class="section" id="about" aria-labelledby="about-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="kicker">About me</p>
+      <h2 id="about-title">From Business Problems to Business Solutions</h2>
+    </header>
+    <div class="about__lead reveal">
+      <p class="big">I am a Business Analyst focused on understanding business needs, translating them into clear requirements, and working with cross-functional teams to deliver practical solutions.</p>
+      <div>
+        <p>My experience includes end-to-end requirements gathering, BRD/FRD/PRD documentation, user stories, process modelling, wireframing, stakeholder communication, Agile/Scrum ceremonies, UAT coordination, risk identification, RFP/RFI management, market research and business case preparation.</p>
+        <p>I also bring a strong analytical mindset through Excel, Power BI, SQL and data-driven reporting, allowing me to connect business requirements with measurable insights.</p>
+      </div>
+    </div>
+    <div class="grid-3 reveal">
+      <article class="card card--lift"><div class="facet__icon" aria-hidden="true">Bu</div><h3>Business Understanding</h3><p>Understanding business objectives, identifying pain points and translating them into actionable requirements.</p></article>
+      <article class="card card--lift"><div class="facet__icon" aria-hidden="true">Rq</div><h3>Requirement Analysis</h3><p>BRD, FRD, PRD, user stories, test cases, functional and non-functional requirements.</p></article>
+      <article class="card card--lift"><div class="facet__icon" aria-hidden="true">Pr</div><h3>Process Thinking</h3><p>As-Is / To-Be processes, workflow optimization, gap analysis and process modelling.</p></article>
+      <article class="card card--lift"><div class="facet__icon" aria-hidden="true">Pd</div><h3>Product Thinking</h3><p>MVP definition, MoSCoW prioritization, wireframes, user flows and stakeholder feedback.</p></article>
+      <article class="card card--lift"><div class="facet__icon" aria-hidden="true">Dc</div><h3>Delivery Collaboration</h3><p>Agile/Scrum ceremonies, UAT, defect tracking, risk management and cross-functional coordination.</p></article>
+      <article class="card card--lift"><div class="facet__icon" aria-hidden="true">Da</div><h3>Data &amp; Analytics</h3><p>Excel, Power BI, SQL, dashboards, KPI analysis and business reporting.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3. EXPERIENCE ===== -->
+<section class="section section--tint" id="experience" aria-labelledby="exp-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="kicker">Career so far</p>
+      <h2 id="exp-title">Professional Experience</h2>
+      <p>Open any area below to see the detail of the work.</p>
+    </header>
+
+    <ol class="tl">
+      <li class="tl__item reveal">
+        <span class="tl__node" aria-hidden="true"></span>
+        <article class="card glass">
+          <div class="role">
+            <div>
+              <h3>Business Analyst</h3>
+              <p class="role__org">CIAR Software Solutions</p>
+            </div>
+            <p class="role__meta"><span>Chennai, India</span> <span>November 2023 – October 2025</span></p>
+          </div>
+          <div class="resp">
+            <details class="disc" open>
+              <summary>Requirements Engineering</summary>
+              <div class="disc__body"><ul class="bul">
+                <li>Led end-to-end requirements gathering and analysis for a POS platform with 20+ modules.</li>
+                <li>Created BRD, PRD, FRD, user stories, test cases, functional requirements and non-functional requirements.</li>
+                <li>Improved requirements clarity and reduced development clarification by <strong>20%</strong>.</li>
+              </ul></div>
+            </details>
+            <details class="disc">
+              <summary>Process &amp; UX Analysis</summary>
+              <div class="disc__body"><ul class="bul">
+                <li>Created wireframes, user flows, process models and workflow diagrams.</li>
+                <li>Used Figma, Lucidchart and Draw.io.</li>
+                <li>Improved stakeholder approval cycles and reduced UX rework by <strong>30%</strong>.</li>
+              </ul></div>
+            </details>
+            <details class="disc">
+              <summary>Business Intelligence</summary>
+              <div class="disc__body"><ul class="bul">
+                <li>Developed KPI dashboards and reports using Power BI and Microsoft Excel.</li>
+                <li>Supported sales visibility, operational efficiency and data-driven decision-making.</li>
+              </ul></div>
+            </details>
+            <details class="disc">
+              <summary>User Acceptance Testing</summary>
+              <div class="disc__body"><ul class="bul">
+                <li>Managed and coordinated UAT across 20+ test cycles.</li>
+                <li>Prepared test scenarios, UAT documentation, defect tracking, stakeholder feedback and structured feedback loops.</li>
+                <li>Contributed to a <strong>40%</strong> reduction in post-release defects.</li>
+              </ul></div>
+            </details>
+            <details class="disc">
+              <summary>Agile &amp; Scrum</summary>
+              <div class="disc__body"><ul class="bul">
+                <li>Facilitated sprint planning, backlog refinement and sprint reviews.</li>
+                <li>Supported improved delivery predictability and collaboration across teams.</li>
+              </ul></div>
+            </details>
+            <details class="disc">
+              <summary>RFP / RFI Management</summary>
+              <div class="disc__body"><ul class="bul">
+                <li>Worked with presales, project managers, architects and technical leads to develop accurate and timely client proposals.</li>
+              </ul></div>
+            </details>
+            <details class="disc">
+              <summary>Market &amp; Product Analysis</summary>
+              <div class="disc__body"><ul class="bul">
+                <li>Conducted market research, competitor analysis, MVP definition, MoSCoW prioritization and go-to-market support.</li>
+                <li>Developed SOPs and knowledge documentation that reduced team onboarding time by <strong>30%</strong>.</li>
+              </ul></div>
+            </details>
+            <details class="disc">
+              <summary>Client &amp; Stakeholder Management</summary>
+              <div class="disc__body"><ul class="bul">
+                <li>Managed client engagement through solution demonstrations, requirement walkthroughs, risk identification, risk mitigation planning and business case preparation.</li>
+                <li>Supported long-term client relationships and solution value delivery.</li>
+              </ul></div>
+            </details>
+          </div>
+        </article>
+      </li>
+
+      <li class="tl__item tl__item--past reveal">
+        <span class="tl__node" aria-hidden="true"></span>
+        <div class="earlier">
+          <article class="card card--lift">
+            <div class="role"><div><h3>Senior HR Executive</h3><p class="role__org">Winter Bear</p></div></div>
+            <p class="role__meta" style="margin-top:.6rem"><span>Bangalore</span> <span>August 2023 – October 2023</span></p>
+            <ul class="bul">
+              <li>Aligning HR policies with federal and local regulations.</li>
+              <li>Acting as a communication bridge between management and employees.</li>
+              <li>Handling employee grievances and workplace communication.</li>
+              <li>Managing payroll processing and compensation calculations.</li>
+              <li>Hiring employees.</li>
+              <li>Managing hiring documentation.</li>
+            </ul>
+          </article>
+          <article class="card card--lift">
+            <div class="role"><div><h3>HR Recruitment Executive</h3><p class="role__org">BIG3 Strategies</p></div></div>
+            <p class="role__meta" style="margin-top:.6rem"><span>Chennai</span> <span>June 2021 – November 2022</span></p>
+            <ul class="bul">
+              <li>Understanding requirements from IT and non-IT clients.</li>
+              <li>Consolidating candidate profiles from team members.</li>
+              <li>Sharing shortlisted profiles with clients.</li>
+              <li>End-to-end recruitment.</li>
+              <li>Team management.</li>
+              <li>Client coordination.</li>
+              <li>Daily, weekly and monthly reporting.</li>
+              <li>Interview status tracking.</li>
+              <li>Creating HR policies and procedures.</li>
+              <li>Supporting performance scorecards, appraisals, increments and bonus processes.</li>
+            </ul>
+          </article>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== 4. EDUCATION ===== -->
+<section class="section" id="education" aria-labelledby="edu-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="kicker">Education</p>
+      <h2 id="edu-title">Academic Foundation</h2>
+    </header>
+    <div class="grid-2 reveal">
+      <article class="card card--lift edu">
+        <div class="edu__badge" aria-hidden="true"><span>MBA</span></div>
+        <div>
+          <h3>MBA, Masters in Business Administration</h3>
+          <p class="edu__spec">Specialization: HR &amp; Marketing</p>
+          <p class="edu__meta"><span>Ethiraj College for Women</span><span class="edu__year">2023</span></p>
+        </div>
+      </article>
+      <article class="card card--lift edu">
+        <div class="edu__badge" aria-hidden="true"><span>BBA</span></div>
+        <div>
+          <h3>BBA, Bachelor of Business Administration</h3>
+          <p class="edu__meta"><span>Sathyabama University</span><span class="edu__year">2021</span></p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. CORE BA SKILLS ===== -->
+<section class="section section--tint" id="skills" aria-labelledby="skills-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="kicker">Capabilities</p>
+      <h2 id="skills-title">Core Business Analysis Skills</h2>
+    </header>
+    <div class="grid-3 reveal">
+      <article class="card card--lift skill" style="--accent:#4787FF"><h3>Requirements &amp; Documentation</h3>
+        <ul class="chips"><li class="chip">Requirements Gathering</li><li class="chip">Requirements Analysis</li><li class="chip">BRD</li><li class="chip">FRD</li><li class="chip">PRD</li><li class="chip">User Stories</li><li class="chip">Test Cases</li><li class="chip">Functional Requirements</li><li class="chip">Non-Functional Requirements</li></ul></article>
+      <article class="card card--lift skill" style="--accent:#00E5FF"><h3>Business Analysis</h3>
+        <ul class="chips"><li class="chip">Gap Analysis</li><li class="chip">Business Process Improvement</li><li class="chip">Workflow Optimization</li><li class="chip">Business Case Validation</li><li class="chip">Market Research</li><li class="chip">Competitive Analysis</li><li class="chip">MVP Definition</li><li class="chip">MoSCoW Prioritization</li></ul></article>
+      <article class="card card--lift skill" style="--accent:#9B72FF"><h3>Process &amp; Product</h3>
+        <ul class="chips"><li class="chip">Process Modelling</li><li class="chip">Workflow Visualization</li><li class="chip">Wireframing</li><li class="chip">Prototyping</li><li class="chip">User Flows</li><li class="chip">As-Is Analysis</li><li class="chip">To-Be Analysis</li></ul></article>
+      <article class="card card--lift skill" style="--accent:#00D6A0"><h3>Delivery</h3>
+        <ul class="chips"><li class="chip">Agile Methodologies</li><li class="chip">Scrum</li><li class="chip">Sprint Planning</li><li class="chip">Backlog Refinement</li><li class="chip">Sprint Reviews</li><li class="chip">UAT</li><li class="chip">Defect Tracking</li><li class="chip">Risk Management</li><li class="chip">Risk Mitigation</li></ul></article>
+      <article class="card card--lift skill" style="--accent:#A855F7"><h3>Stakeholders</h3>
+        <ul class="chips"><li class="chip">Stakeholder Engagement</li><li class="chip">Client Relationship Management</li><li class="chip">Requirement Walkthroughs</li><li class="chip">Solution Demonstrations</li><li class="chip">Cross-functional Collaboration</li><li class="chip">Project Coordination</li></ul></article>
+      <article class="card card--lift skill" style="--accent:#4787FF"><h3>Commercial / Strategic</h3>
+        <ul class="chips"><li class="chip">RFP Management</li><li class="chip">RFI Management</li><li class="chip">Business Case Preparation</li><li class="chip">Go-To-Market Support</li><li class="chip">Competitor Analysis</li><li class="chip">Client Proposal Development</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6. TECHNICAL TOOLKIT ===== -->
+<section class="section" id="tools" aria-labelledby="tools-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="kicker">Technical toolkit</p>
+      <h2 id="tools-title">Tools I Work With</h2>
+    </header>
+    <div class="tools reveal">
+      <article class="card tools__group">
+        <h3>Documentation &amp; Visualization</h3>
+        <div class="tool"><span class="tool__ico" style="--c1:#9B72FF;--c2:#5B3CC4" aria-hidden="true">Fi</span><div><strong>Figma</strong><span>Prototyping and wireframing</span></div></div>
+        <div class="tool"><span class="tool__ico" style="--c1:#FF8A3D;--c2:#C2410C" aria-hidden="true">Lc</span><div><strong>Lucidchart</strong><span>Process modelling and workflow visualization</span></div></div>
+        <div class="tool"><span class="tool__ico" style="--c1:#F59E0B;--c2:#B45309" aria-hidden="true">Dr</span><div><strong>Draw.io</strong><span>Process and workflow diagrams</span></div></div>
+      </article>
+      <article class="card tools__group">
+        <h3>Data &amp; Reporting</h3>
+        <div class="tool"><span class="tool__ico" style="--c1:#22C55E;--c2:#15803D" aria-hidden="true">Xl</span><div><strong>Microsoft Excel</strong><span>Data analysis, Pivot Tables, Power Query, dashboards and reporting</span></div></div>
+        <div class="tool"><span class="tool__ico" style="--c1:#FACC15;--c2:#A16207" aria-hidden="true">Bi</span><div><strong>Power BI</strong><span>KPI dashboards, business intelligence and executive reporting</span></div></div>
+        <div class="tool"><span class="tool__ico" style="--c1:#4787FF;--c2:#1C47C4" aria-hidden="true">SQL</span><div><strong>SQL</strong><span>Business data analysis and analytical querying</span></div></div>
+      </article>
+      <article class="card tools__group">
+        <h3>Project Management</h3>
+        <div class="tool"><span class="tool__ico" style="--c1:#3B82F6;--c2:#1E40AF" aria-hidden="true">Ji</span><div><strong>Jira</strong><span>Agile project and backlog management</span></div></div>
+      </article>
+      <article class="card tools__group">
+        <h3>Productivity</h3>
+        <div class="tool"><span class="tool__ico" style="--c1:#2B7CD3;--c2:#185ABD" aria-hidden="true">W</span><div><strong>Microsoft Word</strong></div></div>
+        <div class="tool"><span class="tool__ico" style="--c1:#E0633A;--c2:#B7472A" aria-hidden="true">P</span><div><strong>Microsoft PowerPoint</strong></div></div>
+        <div class="tool"><span class="tool__ico" style="--c1:#00D6A0;--c2:#0F766E" aria-hidden="true">G</span><div><strong>Google Workspace</strong></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7. PROCESS JOURNEY ===== -->
+<section class="section section--tint" id="process" aria-labelledby="process-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="kicker">Method</p>
+      <h2 id="process-title">How I Solve Business Problems</h2>
+      <p>Eight connected stages, from the first conversation about a problem to improving what has shipped.</p>
+    </header>
+    <ol class="process reveal">
+      <li class="step"><span class="step__num" aria-hidden="true">01</span><div class="card card--lift"><h3>DISCOVER</h3><p>Understand the business problem.</p></div></li>
+      <li class="step"><span class="step__num" aria-hidden="true">02</span><div class="card card--lift"><h3>GATHER</h3><p>Engage stakeholders and collect requirements.</p></div></li>
+      <li class="step"><span class="step__num" aria-hidden="true">03</span><div class="card card--lift"><h3>DEFINE</h3><p>Translate business needs into structured requirements.</p></div></li>
+      <li class="step"><span class="step__num" aria-hidden="true">04</span><div class="card card--lift"><h3>ANALYSE</h3><p>Perform gap analysis, process analysis, data analysis and root-cause investigation.</p></div></li>
+      <li class="step"><span class="step__num" aria-hidden="true">05</span><div class="card card--lift"><h3>DESIGN</h3><p>Create workflows, wireframes, process models and solution concepts.</p></div></li>
+      <li class="step"><span class="step__num" aria-hidden="true">06</span><div class="card card--lift"><h3>VALIDATE</h3><p>Conduct walkthroughs, UAT, testing and stakeholder validation.</p></div></li>
+      <li class="step"><span class="step__num" aria-hidden="true">07</span><div class="card card--lift"><h3>DELIVER</h3><p>Support Agile delivery, documentation and implementation.</p></div></li>
+      <li class="step"><span class="step__num" aria-hidden="true">08</span><div class="card card--lift"><h3>IMPROVE</h3><p>Analyse feedback, defects, business outcomes and opportunities for optimization.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== 8. FEATURED CASE STUDY ===== -->
+<section class="section" id="case-study" aria-labelledby="case-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="kicker">Featured case study</p>
+      <h2 id="case-title">POS Platform: End-to-End Business Analysis</h2>
+    </header>
+    <div class="case">
+      <article class="card glass reveal">
+        <p class="case__label">Business context</p>
+        <p class="case__context">A POS platform containing 20+ modules required structured requirements, process definition, UX alignment and testing coordination.</p>
+        <p class="case__label" style="margin-top:2rem">My BA contribution</p>
+        <div class="flows">
+          <div class="flow"><span class="flow__name">Requirements</span><ol class="flow__chain"><li><span>BRD</span></li><li><span>PRD</span></li><li><span>FRD</span></li><li><span>User Stories</span></li><li><span>Test Cases</span></li></ol></div>
+          <div class="flow"><span class="flow__name">Process</span><ol class="flow__chain"><li><span>User Flows</span></li><li><span>Workflow Diagrams</span></li><li><span>Process Models</span></li></ol></div>
+          <div class="flow"><span class="flow__name">Design</span><ol class="flow__chain"><li><span>Wireframes</span></li><li><span>Prototypes</span></li><li><span>Stakeholder Reviews</span></li></ol></div>
+          <div class="flow"><span class="flow__name">Delivery</span><ol class="flow__chain"><li><span>Agile</span></li><li><span>Scrum</span></li><li><span>Backlog Refinement</span></li><li><span>Sprint Reviews</span></li></ol></div>
+          <div class="flow"><span class="flow__name">Validation</span><ol class="flow__chain"><li><span>UAT</span></li><li><span>Test Scenarios</span></li><li><span>Defect Tracking</span></li><li><span>Feedback Loops</span></li></ol></div>
+        </div>
+        <p class="case__label" style="margin-top:1.8rem">Tools</p>
+        <ul class="case__tools chips" style="margin-top:.4rem"><li class="chip">Figma</li><li class="chip">Lucidchart</li><li class="chip">Draw.io</li><li class="chip">Jira</li><li class="chip">Power BI</li><li class="chip">Excel</li></ul>
+      </article>
+      <div class="kpis reveal" aria-label="Documented outcomes">
+        <div class="card kpi"><p class="kpi__num"><span class="count" style="--to:20" aria-hidden="true"></span><small>%</small><span class="sr-only">20%</span></p><p class="kpi__label">Reduction in development clarification</p></div>
+        <div class="card kpi"><p class="kpi__num"><span class="count" style="--to:30" aria-hidden="true"></span><small>%</small><span class="sr-only">30%</span></p><p class="kpi__label">Reduction in UX rework</p></div>
+        <div class="card kpi"><p class="kpi__num"><span class="count" style="--to:40" aria-hidden="true"></span><small>%</small><span class="sr-only">40%</span></p><p class="kpi__label">Reduction in post-release defects</p></div>
+        <div class="card kpi"><p class="kpi__num"><span class="count" style="--to:20" aria-hidden="true"></span><small>+</small><span class="sr-only">20+</span></p><p class="kpi__label">UAT test cycles</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 9. PRODUCT & INTEGRATION ===== -->
+<section class="section section--tint" id="integration" aria-labelledby="int-title">
+  <div class="container">
+    <div class="eco-wrap">
+      <div class="reveal">
+        <header class="section-head" style="margin-bottom:1.5rem">
+          <p class="kicker">Product &amp; integration experience</p>
+          <h2 id="int-title">Hospitality Diet Management Platform</h2>
+        </header>
+        <p class="lead">Built and launched a diet management application for the hospitality industry from scratch, successfully deployed and adopted in production.</p>
+        <p class="note">Seven system integrations connect ordering, billing, payment and communication to a single diet management core.</p>
+        <div class="workflow">
+          <p class="case__label">Business workflow</p>
+          <ol class="flow__chain"><li><span>Ordering</span></li><li><span>Billing</span></li><li><span>Payment</span></li><li><span>Communication</span></li><li><span>Hospitality / Diet Management</span></li></ol>
+        </div>
+      </div>
+      <div class="eco reveal" role="list" aria-label="System integrations">
+        <div class="eco__core" role="listitem"><strong>Diet Management Application</strong><span>Hospitality platform</span></div>
+        <span class="eco__spoke" style="--a:0deg" aria-hidden="true"></span>
+        <span class="eco__spoke" style="--a:51.43deg;--dl:-.45s" aria-hidden="true"></span>
+        <span class="eco__spoke" style="--a:102.86deg;--dl:-.9s" aria-hidden="true"></span>
+        <span class="eco__spoke" style="--a:154.29deg;--dl:-1.35s" aria-hidden="true"></span>
+        <span class="eco__spoke" style="--a:205.71deg;--dl:-1.8s" aria-hidden="true"></span>
+        <span class="eco__spoke" style="--a:257.14deg;--dl:-2.25s" aria-hidden="true"></span>
+        <span class="eco__spoke" style="--a:308.57deg;--dl:-2.7s" aria-hidden="true"></span>
+        <div class="eco__node" role="listitem" style="--a:0deg">Swiggy<small>Ordering</small></div>
+        <div class="eco__node" role="listitem" style="--a:51.43deg">Zomato<small>Ordering</small></div>
+        <div class="eco__node" role="listitem" style="--a:102.86deg">JD Edwards<small>ERP</small></div>
+        <div class="eco__node" role="listitem" style="--a:154.29deg">CCAvenue<small>Payments</small></div>
+        <div class="eco__node" role="listitem" style="--a:205.71deg">WhatsApp<small>Communication</small></div>
+        <div class="eco__node" role="listitem" style="--a:257.14deg">Addlogs</div>
+        <div class="eco__node" role="listitem" style="--a:308.57deg">HIS: Kranium<small>Hospital information</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 10. PRODUCT CLARITY ===== -->
+<section class="section" id="clarity" aria-labelledby="clarity-title">
+  <div class="container">
+    <div class="clarity glass reveal">
+      <div>
+        <p class="kicker" style="display:inline-flex;align-items:center;gap:.6rem;color:var(--cyan);font-weight:600;margin-bottom:1rem">Product clarity &amp; documentation</p>
+        <h2 id="clarity-title">Standardizing Product Language</h2>
+        <p>Standardized product terminology across business documentation, functional documentation and technical documentation.</p>
+        <p class="outcome"><strong>Outcome:</strong> improved stakeholder alignment, reduced ambiguity and enhanced overall product clarity.</p>
+      </div>
+      <div class="planes" aria-hidden="true">
+        <div class="planes__stage">
+          <div class="plane plane--a">Business documentation</div>
+          <div class="plane plane--b">Functional documentation</div>
+          <div class="plane plane--c">Technical documentation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 11. PORTFOLIO PROJECTS ===== -->
+<section class="section section--tint" id="projects" aria-labelledby="proj-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="kicker">Portfolio projects</p>
+      <h2 id="proj-title">Selected Projects</h2>
+      <p>Ten analytics portfolio projects, grouped by technology. Each one is framed around a business user and the questions they need answered.</p>
+    </header>
+
+    <!-- Excel -->
+    <div class="pgroup">
+      <div class="pgroup__head reveal"><span class="pgroup__ico" style="--c1:#22C55E;--c2:#15803D" aria-hidden="true">Xl</span><h3>Excel</h3></div>
+      <div class="grid-2 reveal">
+        <article class="card card--lift proj">
+          <div class="proj__top"><span class="proj__no">Project 01</span><span class="proj__badge">Portfolio project</span></div>
+          <h4>Retail Sales &amp; Profitability Analysis</h4>
+          <dl class="proj__meta"><dt>Technology</dt><dd>Excel</dd><dt>Domain</dt><dd>Retail / E-commerce</dd><dt>End user</dt><dd>Sales Director / Business Head</dd><dt>Dataset</dt><dd>25,000+ transactions</dd></dl>
+          <p class="proj__problem">A retail company wants to understand which products, regions and customer segments are driving revenue and profit and where margins are declining.</p>
+          <ul class="chips"><li class="chip">Excel</li><li class="chip">Pivot Tables</li><li class="chip">Power Query</li><li class="chip">XLOOKUP</li><li class="chip">SUMIFS</li><li class="chip">Charts</li></ul>
+          <details class="proj__more">
+            <summary class="btn btn--ghost btn--sm"><span class="when-closed">Explore Project</span><span class="when-open">Close details</span><span class="caret" aria-hidden="true"></span></summary>
+            <div class="proj__detail">
+              <div><h5>Key fields</h5><p>Order ID, Order Date, Customer, Product, Category, Sub-Category, Region, Sales, Quantity, Discount and Profit.</p></div>
+              <div><h5>Business questions</h5><ul class="bul"><li>What is total revenue and profit?</li><li>Which categories generate the highest sales?</li><li>Which products have poor profit margins?</li><li>Which regions contribute the most revenue?</li><li>How does discount affect profitability?</li><li>What are monthly sales trends?</li></ul></div>
+              <div><h5>KPIs</h5><p>Total Sales, Total Profit, Profit Margin %, Total Orders, Average Order Value.</p></div>
+              <div><h5>Deliverable</h5><p>Interactive Excel dashboard with slicers, KPI cards, trend analysis, product profitability and regional profitability.</p></div>
+            </div>
+          </details>
+        </article>
+        <article class="card card--lift proj">
+          <div class="proj__top"><span class="proj__no">Project 02</span><span class="proj__badge">Portfolio project</span></div>
+          <h4>Workforce Performance &amp; Attrition</h4>
+          <dl class="proj__meta"><dt>Technology</dt><dd>Excel</dd><dt>Domain</dt><dd>Human Resources</dd><dt>End user</dt><dd>HR Director / People Analytics Team</dd><dt>Dataset</dt><dd>8,000+ employees</dd></dl>
+          <p class="proj__problem">The HR team wants to understand employee attrition, workforce demographics, salary distribution and performance patterns.</p>
+          <ul class="chips"><li class="chip">Excel</li><li class="chip">Power Query</li><li class="chip">Pivot Tables</li><li class="chip">Conditional Formatting</li><li class="chip">Charts</li></ul>
+          <details class="proj__more">
+            <summary class="btn btn--ghost btn--sm"><span class="when-closed">Explore Project</span><span class="when-open">Close details</span><span class="caret" aria-hidden="true"></span></summary>
+            <div class="proj__detail">
+              <div><h5>Key fields</h5><p>Employee ID, Age, Gender, Department, Job Role, Salary, Years at Company, Performance Rating, Job Satisfaction, Overtime, Training Hours and Attrition.</p></div>
+              <div><h5>KPIs</h5><p>Total Employees, Attrition Rate, Average Salary, Average Tenure and Average Performance Score.</p></div>
+              <div><h5>Analysis</h5><ul class="bul"><li>Attrition by Department</li><li>Attrition by Age Group</li><li>Salary by Job Role</li><li>Performance vs Salary</li><li>Overtime vs Attrition</li><li>Tenure Distribution</li></ul></div>
+            </div>
+          </details>
+        </article>
+      </div>
+    </div>
+
+    <!-- SQL -->
+    <div class="pgroup">
+      <div class="pgroup__head reveal"><span class="pgroup__ico" style="--c1:#4787FF;--c2:#1C47C4" aria-hidden="true">SQL</span><h3>SQL</h3></div>
+      <div class="grid-2 reveal">
+        <article class="card card--lift proj">
+          <div class="proj__top"><span class="proj__no">Project 03</span><span class="proj__badge">Portfolio project</span></div>
+          <h4>Hospital Patient &amp; Readmission Analysis</h4>
+          <dl class="proj__meta"><dt>Technology</dt><dd>SQL</dd><dt>Domain</dt><dd>Healthcare</dd><dt>End user</dt><dd>Hospital CEO / Hospital Director</dd><dt>Dataset</dt><dd>50,000+ patient records</dd></dl>
+          <p class="proj__problem">Hospital leadership needs to understand readmissions, length of stay, treatment costs and admission patterns across patients, states and hospitals.</p>
+          <ul class="chips"><li class="chip">JOINs</li><li class="chip">Subqueries</li><li class="chip">CTEs</li><li class="chip">Window Functions</li><li class="chip">Views</li><li class="chip">Date Functions</li></ul>
+          <details class="proj__more">
+            <summary class="btn btn--ghost btn--sm"><span class="when-closed">Explore Project</span><span class="when-open">Close details</span><span class="caret" aria-hidden="true"></span></summary>
+            <div class="proj__detail">
+              <div><h5>Tables</h5><p>Patients, Admissions, Treatments, Insurance and Outcomes.</p></div>
+              <div><h5>SQL skills</h5><p>SELECT, WHERE, GROUP BY, HAVING, CASE, JOINs, Subqueries, CTEs, Window Functions, Views and Date Functions.</p></div>
+              <div><h5>Business questions</h5><ul class="bul"><li>Which conditions have the highest readmission rates?</li><li>What is the average length of stay?</li><li>Which patient groups generate the highest treatment costs?</li><li>Which states have the highest admission volumes?</li><li>What percentage of patients are readmitted?</li><li>How does satisfaction vary by treatment?</li><li>Which hospitals have unusually high readmission rates?</li></ul></div>
+            </div>
+          </details>
+        </article>
+        <article class="card card--lift proj">
+          <div class="proj__top"><span class="proj__no">Project 04</span><span class="proj__badge">Portfolio project</span></div>
+          <h4>E-commerce Customer &amp; Product Analytics</h4>
+          <dl class="proj__meta"><dt>Technology</dt><dd>SQL</dd><dt>Domain</dt><dd>E-commerce</dd><dt>End user</dt><dd>Chief Marketing Officer / E-commerce Director</dd><dt>Dataset</dt><dd>100,000+ orders</dd></dl>
+          <p class="proj__problem">Marketing and e-commerce leaders need to identify high-value customers, repeat purchase behaviour, top products and revenue growth.</p>
+          <ul class="chips"><li class="chip">CTEs</li><li class="chip">RANK()</li><li class="chip">DENSE_RANK()</li><li class="chip">LAG()</li><li class="chip">LEAD()</li><li class="chip">Running Totals</li><li class="chip">Cohort Analysis</li></ul>
+          <details class="proj__more">
+            <summary class="btn btn--ghost btn--sm"><span class="when-closed">Explore Project</span><span class="when-open">Close details</span><span class="caret" aria-hidden="true"></span></summary>
+            <div class="proj__detail">
+              <div><h5>Tables</h5><p>Customers, Orders, Order Items, Products, Payments and Reviews.</p></div>
+              <div><h5>Business questions</h5><ul class="bul"><li>Who are the highest-value customers?</li><li>What is the repeat purchase rate?</li><li>Which products generate the highest revenue?</li><li>Which categories have the highest average order value?</li><li>What is monthly revenue growth?</li><li>Which customers have not purchased recently?</li><li>What is the average time between purchases?</li></ul></div>
+              <div><h5>Advanced SQL</h5><p>CTEs, RANK(), DENSE_RANK(), LAG(), LEAD(), Running Totals, Customer Segmentation and Cohort Analysis.</p></div>
+            </div>
+          </details>
+        </article>
+      </div>
+    </div>
+
+    <!-- Power BI -->
+    <div class="pgroup">
+      <div class="pgroup__head reveal"><span class="pgroup__ico" style="--c1:#FACC15;--c2:#A16207" aria-hidden="true">Bi</span><h3>Power BI</h3></div>
+      <div class="grid-2 reveal">
+        <article class="card card--lift proj">
+          <div class="proj__top"><span class="proj__no">Project 05</span><span class="proj__badge">Portfolio project</span></div>
+          <h4>Executive Sales Intelligence</h4>
+          <dl class="proj__meta"><dt>Technology</dt><dd>Power BI</dd><dt>Domain</dt><dd>Retail</dd><dt>End user</dt><dd>CEO / Sales Director</dd><dt>Dataset</dt><dd>150,000+ sales transactions</dd></dl>
+          <p class="proj__problem">Leadership needs a single view of revenue, profit, orders and growth across products, customers and regions.</p>
+          <ul class="chips"><li class="chip">Power Query</li><li class="chip">DAX</li><li class="chip">Data Modelling</li><li class="chip">Star Schema</li><li class="chip">Time Intelligence</li></ul>
+          <details class="proj__more">
+            <summary class="btn btn--ghost btn--sm"><span class="when-closed">Explore Project</span><span class="when-open">Close details</span><span class="caret" aria-hidden="true"></span></summary>
+            <div class="proj__detail">
+              <div><h5>KPIs</h5><p>Revenue, Profit, Profit Margin, Orders, Average Order Value and YoY Growth.</p></div>
+              <div><h5>Dashboard pages</h5><ul class="bul"><li><strong>Executive Overview:</strong> Revenue, Profit, Orders, Monthly Trend and Regional Performance.</li><li><strong>Product Analysis:</strong> Category Performance, Product Profitability and Top / Bottom Products.</li><li><strong>Customer Analysis:</strong> Customer Segments, Revenue by Customer and Repeat Customers.</li><li><strong>Regional Analysis:</strong> Country / State Performance, Geographic Sales and Regional Profitability.</li></ul></div>
+              <div><h5>Technical skills</h5><p>Power Query, DAX, Data Modelling, Star Schema, CALCULATE, SUMX, DIVIDE, FILTER, DISTINCTCOUNT and Time Intelligence.</p></div>
+            </div>
+          </details>
+        </article>
+        <article class="card card--lift proj">
+          <div class="proj__top"><span class="proj__no">Project 06</span><span class="proj__badge">Portfolio project</span></div>
+          <h4>Healthcare Operations Dashboard</h4>
+          <dl class="proj__meta"><dt>Technology</dt><dd>Power BI</dd><dt>Domain</dt><dd>Healthcare</dd><dt>End user</dt><dd>Hospital CEO / Operations Director</dd></dl>
+          <p class="proj__problem">Hospital leadership needs to monitor admissions, length of stay, readmissions, treatment costs, satisfaction and insurance claims in one place.</p>
+          <ul class="chips"><li class="chip">Power BI</li><li class="chip">KPI Design</li><li class="chip">Multi-page Dashboards</li></ul>
+          <details class="proj__more">
+            <summary class="btn btn--ghost btn--sm"><span class="when-closed">Explore Project</span><span class="when-open">Close details</span><span class="caret" aria-hidden="true"></span></summary>
+            <div class="proj__detail">
+              <div><h5>KPIs</h5><p>Total Admissions, Average Length of Stay, Readmission Rate, Average Treatment Cost, Patient Satisfaction and Insurance Claim Rate.</p></div>
+              <div><h5>Dashboard pages</h5><ul class="bul"><li>Executive Overview</li><li>Patient Analysis</li><li>Operational Analysis</li><li>Financial Analysis</li></ul></div>
+            </div>
+          </details>
+        </article>
+      </div>
+    </div>
+
+    <!-- Tableau -->
+    <div class="pgroup">
+      <div class="pgroup__head reveal"><span class="pgroup__ico" style="--c1:#E97627;--c2:#1F4E79" aria-hidden="true">Tb</span><h3>Tableau</h3></div>
+      <div class="grid-2 reveal">
+        <article class="card card--lift proj">
+          <div class="proj__top"><span class="proj__no">Project 07</span><span class="proj__badge">Portfolio project</span></div>
+          <h4>Global Airline Performance</h4>
+          <dl class="proj__meta"><dt>Technology</dt><dd>Tableau</dd><dt>Domain</dt><dd>Aviation</dd><dt>End user</dt><dd>Airline Management / Operations Director</dd><dt>Dataset</dt><dd>200,000+ flight records</dd></dl>
+          <p class="proj__problem">Airline management needs to see which routes earn the most, where delays and cancellations happen, and how performance varies across the network.</p>
+          <ul class="chips"><li class="chip">Tableau</li><li class="chip">Route Analysis</li><li class="chip">Delay Analysis</li><li class="chip">Revenue Analysis</li></ul>
+          <details class="proj__more">
+            <summary class="btn btn--ghost btn--sm"><span class="when-closed">Explore Project</span><span class="when-open">Close details</span><span class="caret" aria-hidden="true"></span></summary>
+            <div class="proj__detail">
+              <div><h5>KPIs</h5><p>Total Flights, Passengers, Revenue, Load Factor, Cancellation Rate and On-Time Performance.</p></div>
+              <div><h5>Dashboard</h5><ul class="bul"><li>Executive Overview</li><li>Route Analysis</li><li>Airport Performance</li><li>Delay Analysis</li><li>Revenue Analysis</li></ul></div>
+              <div><h5>Business questions</h5><ul class="bul"><li>Which routes generate the most revenue?</li><li>Which airports experience the most delays?</li><li>What are the busiest travel periods?</li><li>Which airlines have the highest cancellation rates?</li><li>How does operational performance vary by route?</li></ul></div>
+            </div>
+          </details>
+        </article>
+        <article class="card card--lift proj">
+          <div class="proj__top"><span class="proj__no">Project 08</span><span class="proj__badge">Portfolio project</span></div>
+          <h4>Global Healthcare &amp; Disease Trends</h4>
+          <dl class="proj__meta"><dt>Technology</dt><dd>Tableau</dd><dt>Domain</dt><dd>Public Health</dd><dt>End user</dt><dd>Public Health Analysts / Healthcare Leadership</dd><dt>Dataset</dt><dd>Multi-country daily healthcare statistics</dd></dl>
+          <p class="proj__problem">Public health teams need to compare case, recovery and mortality trends across countries and regions over time.</p>
+          <ul class="chips"><li class="chip">Tableau</li><li class="chip">Time-Series Analysis</li><li class="chip">Regional Comparison</li></ul>
+          <details class="proj__more">
+            <summary class="btn btn--ghost btn--sm"><span class="when-closed">Explore Project</span><span class="when-open">Close details</span><span class="caret" aria-hidden="true"></span></summary>
+            <div class="proj__detail">
+              <div><h5>KPIs</h5><p>Confirmed Cases, Recoveries, Deaths, Mortality Rate and Cases per Million.</p></div>
+              <div><h5>Analysis</h5><ul class="bul"><li>Country-level Trends</li><li>Regional Comparison</li><li>Growth Rates</li><li>Peak Periods</li><li>Mortality Trends</li></ul></div>
+              <div><h5>Dashboard</h5><p>Global Overview, Country Comparison, Time-Series Analysis, Regional Trends and Mortality Analysis.</p></div>
+            </div>
+          </details>
+        </article>
+      </div>
+    </div>
+
+    <!-- Machine Learning -->
+    <div class="pgroup">
+      <div class="pgroup__head reveal"><span class="pgroup__ico" style="--c1:#9B72FF;--c2:#5B3CC4" aria-hidden="true">ML</span><h3>Machine Learning</h3></div>
+      <div class="grid-2 reveal">
+        <article class="card card--lift proj">
+          <div class="proj__top"><span class="proj__no">Project 09</span><span class="proj__badge">Portfolio project</span></div>
+          <h4>Customer Churn Prediction</h4>
+          <dl class="proj__meta"><dt>Technology</dt><dd>Machine Learning</dd><dt>Domain</dt><dd>Telecom / Subscription Business</dd><dt>End user</dt><dd>Customer Retention / Business Leadership</dd><dt>Dataset</dt><dd>50,000+ customers</dd></dl>
+          <p class="proj__problem">A subscription company wants to identify customers likely to leave so the retention team can take preventive action.</p>
+          <ul class="chips"><li class="chip">Logistic Regression</li><li class="chip">Decision Tree</li><li class="chip">Random Forest</li><li class="chip">Gradient Boosting</li></ul>
+          <details class="proj__more">
+            <summary class="btn btn--ghost btn--sm"><span class="when-closed">Explore Project</span><span class="when-open">Close details</span><span class="caret" aria-hidden="true"></span></summary>
+            <div class="proj__detail">
+              <div><h5>Features</h5><p>Customer Age, Tenure, Monthly Charges, Contract Type, Payment Method, Support Tickets, Usage, Complaints and Previous Churn.</p></div>
+              <div><h5>ML workflow</h5><ol class="pipeline"><li>Data Collection</li><li>Data Cleaning</li><li>EDA</li><li>Feature Engineering</li><li>Train / Test Split</li><li>Model Training</li><li>Model Evaluation</li><li>Churn Prediction</li></ol></div>
+              <div><h5>Evaluation</h5><p>Accuracy, Precision, Recall, F1 Score, ROC-AUC and Confusion Matrix.</p></div>
+              <div><h5>Business output</h5><p>Low Risk, Medium Risk and High Risk customer classifications.</p></div>
+            </div>
+          </details>
+        </article>
+        <article class="card card--lift proj">
+          <div class="proj__top"><span class="proj__no">Project 10</span><span class="proj__badge">Portfolio project</span></div>
+          <h4>Residential Property Price Prediction</h4>
+          <dl class="proj__meta"><dt>Technology</dt><dd>Machine Learning</dd><dt>Domain</dt><dd>Real Estate</dd><dt>Dataset</dt><dd>20,000+ residential properties</dd></dl>
+          <p class="proj__problem">A real estate company wants to estimate property prices based on location, size, amenities and property characteristics.</p>
+          <ul class="chips"><li class="chip">Linear Regression</li><li class="chip">Decision Tree Regressor</li><li class="chip">Random Forest Regressor</li><li class="chip">Gradient Boosting</li></ul>
+          <details class="proj__more">
+            <summary class="btn btn--ghost btn--sm"><span class="when-closed">Explore Project</span><span class="when-open">Close details</span><span class="caret" aria-hidden="true"></span></summary>
+            <div class="proj__detail">
+              <div><h5>Features</h5><p>Location, Property Type, Area, Bedrooms, Bathrooms, Parking, Age, Floor, Amenities and Distance from City Centre.</p></div>
+              <div><h5>ML workflow</h5><ol class="pipeline"><li>Data Cleaning</li><li>EDA</li><li>Outlier Detection</li><li>Feature Engineering</li><li>Encoding</li><li>Model Training</li><li>Model Evaluation</li><li>Price Prediction</li></ol></div>
+              <div><h5>Evaluation</h5><p>MAE, MSE, RMSE and R².</p></div>
+              <div><h5>Business output</h5><p>Given a property's characteristics, the model predicts its estimated market price.</p></div>
+            </div>
+          </details>
+        </article>
+      </div>
+    </div>
+    <p class="disclaimer reveal">These are presented as portfolio projects, not completed real-world client engagements.</p>
+  </div>
+</section>
+
+<!-- ===== 12. BA ARTIFACT LIBRARY ===== -->
+<section class="section" id="artifacts" aria-labelledby="lib-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="kicker">Documentation</p>
+      <h2 id="lib-title">Business Analysis Artifact Library</h2>
+      <p>The documents I produce across a project, grouped by where they sit in the work.</p>
+    </header>
+    <div class="lib reveal">
+      <div class="lib__col">
+        <h3>Requirements <span>5</span></h3>
+        <ul>
+          <li class="artifact" style="--ac:#4787FF"><strong>BRD</strong><span>Business Requirements Document</span></li>
+          <li class="artifact" style="--ac:#4787FF"><strong>FRD</strong><span>Functional Requirements Document</span></li>
+          <li class="artifact" style="--ac:#4787FF"><strong>PRD</strong><span>Product Requirements Document</span></li>
+          <li class="artifact" style="--ac:#4787FF"><strong>User Stories</strong><span>Agile requirements from the user's perspective</span></li>
+          <li class="artifact" style="--ac:#4787FF"><strong>Acceptance Criteria</strong><span>Conditions required for successful implementation</span></li>
+        </ul>
+      </div>
+      <div class="lib__col">
+        <h3>Process <span>4</span></h3>
+        <ul>
+          <li class="artifact" style="--ac:#00E5FF"><strong>As-Is Process</strong><span>Current-state process</span></li>
+          <li class="artifact" style="--ac:#00E5FF"><strong>To-Be Process</strong><span>Future-state process</span></li>
+          <li class="artifact" style="--ac:#00E5FF"><strong>Process Flow</strong><span>Workflow visualization</span></li>
+          <li class="artifact" style="--ac:#00E5FF"><strong>User Flow</strong><span>User journey through the solution</span></li>
+        </ul>
+      </div>
+      <div class="lib__col">
+        <h3>Analysis <span>4</span></h3>
+        <ul>
+          <li class="artifact" style="--ac:#9B72FF"><strong>Gap Analysis</strong><span>Current state vs desired state</span></li>
+          <li class="artifact" style="--ac:#9B72FF"><strong>Root Cause Analysis</strong><span>Understanding underlying business problems</span></li>
+          <li class="artifact" style="--ac:#9B72FF"><strong>MoSCoW Prioritization</strong><span>Must / Should / Could / Won't</span></li>
+          <li class="artifact" style="--ac:#9B72FF"><strong>Competitor Analysis</strong><span>Market and competitor assessment</span></li>
+        </ul>
+      </div>
+      <div class="lib__col">
+        <h3>Delivery <span>4</span></h3>
+        <ul>
+          <li class="artifact" style="--ac:#00D6A0"><strong>UAT Test Cases</strong><span>User acceptance validation</span></li>
+          <li class="artifact" style="--ac:#00D6A0"><strong>Defect Tracking</strong><span>Identification and tracking of issues</span></li>
+          <li class="artifact" style="--ac:#00D6A0"><strong>Risk Register</strong><span>Risk identification and mitigation</span></li>
+          <li class="artifact" style="--ac:#00D6A0"><strong>RFP / RFI</strong><span>Proposal and information request documentation</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 13. BA TOOLKIT MATRIX ===== -->
+<section class="section section--tint" id="toolkit" aria-labelledby="toolkit-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="kicker">BA toolkit</p>
+      <h2 id="toolkit-title">Business Analysis Toolkit</h2>
+      <p>The techniques I reach for at each stage of a project.</p>
+    </header>
+    <div class="matrix reveal">
+      <div class="stage stage--discover"><h3>DISCOVER</h3><ol><li>Stakeholder Interviews</li><li>Requirement Workshops</li><li>Observation</li><li>Questionnaires</li><li>Stakeholder Mapping</li></ol></div>
+      <div class="stage stage--analyse"><h3>ANALYSE</h3><ol><li>Gap Analysis</li><li>Root Cause</li><li>Data Analysis</li><li>Competitor Analysis</li><li>Business Case</li></ol></div>
+      <div class="stage stage--design"><h3>DESIGN</h3><ol><li>Wireframes</li><li>User Flows</li><li>Process Models</li><li>Prototypes</li><li>To-Be Process</li></ol></div>
+      <div class="stage stage--deliver"><h3>DELIVER</h3><ol><li>BRD</li><li>FRD</li><li>PRD</li><li>UAT</li><li>Defect Tracking</li></ol></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 14. ACHIEVEMENTS ===== -->
+<section class="section" id="achievements" aria-labelledby="ach-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="kicker">Achievements</p>
+      <h2 id="ach-title">Measurable Operational Improvements</h2>
+    </header>
+    <div class="metrics reveal">
+      <div class="card metric"><p class="kpi__num"><span class="count" style="--to:20" aria-hidden="true"></span><small>%</small><span class="sr-only">20%</span></p><p class="kpi__label">Reduction in development clarification</p></div>
+      <div class="card metric"><p class="kpi__num"><span class="count" style="--to:30" aria-hidden="true"></span><small>%</small><span class="sr-only">30%</span></p><p class="kpi__label">Reduction in UX rework</p></div>
+      <div class="card metric"><p class="kpi__num"><span class="count" style="--to:40" aria-hidden="true"></span><small>%</small><span class="sr-only">40%</span></p><p class="kpi__label">Reduction in post-release defects</p></div>
+      <div class="card metric"><p class="kpi__num"><span class="count" style="--to:30" aria-hidden="true"></span><small>%</small><span class="sr-only">30%</span></p><p class="kpi__label">Reduction in team onboarding time</p></div>
+      <div class="card metric"><p class="kpi__num"><span class="count" style="--to:20" aria-hidden="true"></span><small>+</small><span class="sr-only">20+</span></p><p class="kpi__label">UAT cycles coordinated</p></div>
+    </div>
+    <div class="wins reveal">
+      <article class="card card--lift win"><h3>Product Launch</h3><p>Built and launched a diet management application for the hospitality industry from scratch and successfully deployed it into production.</p></article>
+      <article class="card card--lift win"><h3>System Integrations</h3><p>Coordinated integrations across seven systems.</p>
+        <ul class="win__tags chips"><li class="chip">Swiggy</li><li class="chip">Zomato</li><li class="chip">JD Edwards ERP</li><li class="chip">WhatsApp</li><li class="chip">Addlogs</li><li class="chip">CCAvenue</li><li class="chip">HIS: Kranium</li></ul></article>
+      <article class="card card--lift win"><h3>Documentation Standardization</h3><p>Standardized product terminology across business, functional and technical documentation.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 15. CAREER TIMELINE ===== -->
+<section class="section section--tint" id="career" aria-labelledby="career-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="kicker">Journey</p>
+      <h2 id="career-title">Career Timeline</h2>
+      <p>From HR and recruitment into business analysis, product and data.</p>
+    </header>
+    <ol class="career reveal">
+      <li class="milestone milestone--edu"><div class="card card--lift"><p class="milestone__year">2021</p><h3>BBA</h3><p>Sathyabama University</p></div></li>
+      <li class="milestone milestone--hr"><div class="card card--lift"><p class="milestone__year">2021–2022</p><h3>HR Recruitment Executive</h3><p>BIG3 Strategies</p></div></li>
+      <li class="milestone milestone--edu"><div class="card card--lift"><p class="milestone__year">2023</p><h3>MBA, HR &amp; Marketing</h3><p>Ethiraj College for Women</p></div></li>
+      <li class="milestone milestone--hr"><div class="card card--lift"><p class="milestone__year">2023</p><h3>Senior HR Executive</h3><p>Winter Bear</p></div></li>
+      <li class="milestone milestone--ba"><div class="card card--lift"><p class="milestone__year">2023–2025</p><h3>Business Analyst</h3><p>CIAR Software Solutions</p></div></li>
+      <li class="milestone milestone--now"><div class="card card--lift"><p class="milestone__year">Present</p><h3>Business Analysis | Product | Data | Process Improvement</h3></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== 16. RESUME ===== -->
+<section class="section" id="resume" aria-labelledby="resume-title">
+  <div class="container">
+    <div class="resume reveal">
+      <h2 id="resume-title">Want the Complete Picture?</h2>
+      <p>Download the complete professional resume.</p>
+      <div class="btn-row">
+        <!-- PLACEHOLDER: replace href="#" with the real resume PDF path, e.g. href="Renuka-Devi-Resume.pdf" download -->
+        <a class="btn btn--primary btn--xl" href="#" data-placeholder="resume-url">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          Download Resume
+        </a>
+        <!-- PLACEHOLDER: replace with the real LinkedIn profile URL -->
+        <a class="btn btn--ghost btn--xl" href="https://www.linkedin.com/in/your-profile" data-placeholder="linkedin-url" target="_blank" rel="noopener noreferrer">View LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+        <!-- PLACEHOLDER: replace with the real GitHub profile URL -->
+        <a class="btn btn--ghost btn--xl" href="https://github.com/your-username" data-placeholder="github-url" target="_blank" rel="noopener noreferrer">View GitHub<span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 17. CONTACT ===== -->
+<section class="section" id="contact" aria-labelledby="contact-title" style="padding-top:0">
+  <div class="container">
+    <div class="contact glass reveal">
+      <div>
+        <h2 id="contact-title">Let's Build Better Business Solutions</h2>
+        <p>Whether you're looking for a Business Analyst, Product Analyst or data-driven business professional, I'd be happy to connect.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="mailto:renuka@gmail.com">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            Email Me
+          </a>
+          <!-- PLACEHOLDER: replace with the real LinkedIn profile URL -->
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/your-profile" data-placeholder="linkedin-url" target="_blank" rel="noopener noreferrer">
+            <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"/></svg>
+            LinkedIn<span class="sr-only"> (opens in a new tab)</span>
+          </a>
+          <!-- PLACEHOLDER: replace with the real GitHub profile URL -->
+          <a class="btn btn--ghost" href="https://github.com/your-username" data-placeholder="github-url" target="_blank" rel="noopener noreferrer">
+            <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>
+            GitHub<span class="sr-only"> (opens in a new tab)</span>
+          </a>
+        </div>
+      </div>
+      <ul class="cinfo">
+        <li><span class="cinfo__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><small>Email</small><a href="mailto:renuka@gmail.com">renuka@gmail.com</a></div></li>
+        <li><span class="cinfo__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span><div><small>Phone</small><a href="tel:+911234525564">+91 12345 25564</a></div></li>
+        <li><span class="cinfo__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><small>Location</small><span>Bengaluru, India</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 Renuka Devi, Business Analyst</p>
+    <a class="btn btn--ghost btn--sm" href="#home">Back to top</a>
+  </div>
+</footer>
+</body>
+</html>
